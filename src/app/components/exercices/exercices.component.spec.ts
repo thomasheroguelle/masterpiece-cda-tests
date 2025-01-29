@@ -11,7 +11,9 @@ describe('ExercicesComponent', () => {
   let mockExercicesService: jasmine.SpyObj<ExercicesService>;
 
   beforeEach(async () => {
-    mockExercicesService = jasmine.createSpyObj('ExercicesService', ['getExercices']);
+    mockExercicesService = jasmine.createSpyObj('ExercicesService', [
+      'getExercices',
+    ]);
 
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
@@ -21,8 +23,7 @@ describe('ExercicesComponent', () => {
       providers: [
         { provide: ExercicesService, useValue: mockExercicesService }, // Injection du mock
       ],
-    })
-      .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ExercicesComponent);
     component = fixture.componentInstance;
@@ -44,7 +45,7 @@ describe('ExercicesComponent', () => {
   it('should call getExercices and display exercices', () => {
     const mockExercices = [
       {
-        id: "id",
+        id: 'id',
         name: 'Pompes',
         instructions: 'Commencez en position de planche...',
         type: 'Poids du corps',
@@ -53,7 +54,7 @@ describe('ExercicesComponent', () => {
         gifUrl: 'assets/exercices/pushup.jpg',
         secondaryMuscles: ['Core', 'Bas du dos'],
         equipment: 'Poids du corps',
-      }
+      },
     ];
 
     mockExercicesService.getExercices.and.returnValue(of(mockExercices));
@@ -61,6 +62,5 @@ describe('ExercicesComponent', () => {
     fixture.detectChanges(); // lance ngOnInit
 
     expect(component.exercices).toEqual(mockExercices);
-
-  })
+  });
 });
