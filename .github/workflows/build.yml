@@ -1,0 +1,45 @@
+name: Angular Build, Test & SonarQube
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  angular:
+    name: Angular Build & Test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+
+    steps:
+      # Récupère le code source.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Installe Node.js et configure le cache
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      # Installe les dépendances du projet
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Run Prettier (check format)
+        run: npx prettier --check .
+
+      - name: Run tests with coverage
+        run: ng test
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v4
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

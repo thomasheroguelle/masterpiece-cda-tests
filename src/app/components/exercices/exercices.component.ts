@@ -5,12 +5,12 @@ import { ExercicesService } from '../../services/json-web-server/exercices.servi
 @Component({
   selector: 'app-exercices',
   templateUrl: './exercices.component.html',
-  styleUrl: './exercices.component.css'
+  styleUrl: './exercices.component.css',
 })
 export class ExercicesComponent {
   exercices!: Exercices[];
 
-  constructor(private readonly exercicesService: ExercicesService) { }
+  constructor(private readonly exercicesService: ExercicesService) {}
 
   ngOnInit() {
     this.getExerciceList();
@@ -20,7 +20,6 @@ export class ExercicesComponent {
     this.exercicesService.getExercices().subscribe((data) => {
       this.exercices = data;
       console.log(data);
-
-    })
+    });
   }
 }

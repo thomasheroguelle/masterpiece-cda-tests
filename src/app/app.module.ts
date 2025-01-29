@@ -6,17 +6,9 @@ import { AppComponent } from './app.component';
 import { ExercicesComponent } from './components/exercices/exercices.component';
 import { provideHttpClient } from '@angular/common/http';
 @NgModule({
-  declarations: [
-    AppComponent,
-    ExercicesComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-  ],
-  providers: [
-    provideHttpClient(),
-  ],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, ExercicesComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [provideHttpClient()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

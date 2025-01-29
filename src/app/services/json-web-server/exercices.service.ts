@@ -5,13 +5,12 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ExercicesService {
+  constructor(private readonly http: HttpClient) {}
 
-  constructor(private readonly http:HttpClient) { }
-
-  getExercices() : Observable<Exercices[]> { 
-    return this.http.get<Exercices[]>(environment.LOCAL_DB)
+  getExercices(): Observable<Exercices[]> {
+    return this.http.get<Exercices[]>(environment.LOCAL_DB);
   }
 }
