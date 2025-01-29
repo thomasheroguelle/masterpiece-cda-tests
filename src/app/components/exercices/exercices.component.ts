@@ -10,7 +10,7 @@ import { ExercicesService } from '../../services/json-web-server/exercices.servi
 export class ExercicesComponent {
   exercices!: Exercices[];
 
-  constructor(private exercicesService: ExercicesService) { }
+  constructor(private readonly exercicesService: ExercicesService) { }
 
   ngOnInit() {
     this.getExerciceList();

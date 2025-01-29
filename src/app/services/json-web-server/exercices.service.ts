@@ -9,7 +9,7 @@ import { environment } from '../../../environment/environment';
 })
 export class ExercicesService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private readonly http:HttpClient) { }
 
   getExercices() : Observable<Exercices[]> { 
     return this.http.get<Exercices[]>(environment.LOCAL_DB)

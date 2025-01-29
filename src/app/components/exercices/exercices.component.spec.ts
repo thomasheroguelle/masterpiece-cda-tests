@@ -32,6 +32,15 @@ describe('ExercicesComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  /*
+  Ici, on cherche à vérifier que le composant a été créé correctement. 
+  On s'assure que le composant existe et a bien été instancié. 
+  On veut tester que lorsque le composant appelle le service pour récupérer les exercices, ceux ci sont effectivement retournés et stockés dans la propriété "exercices" du composant. 
+             
+      - mockExercicesService.getExercices.and.returnValue(of(mockExercices)); : On simule le comportement du service en retournant une liste d'exercices factices.   
+      - fixture.detectChanges(); : Cette ligne déclenche le cycle de détection des changements, ce qui simule l'appel au service dans le ngOnInit du composant.
+      - expect(component.exercices).toEqual(mockExercices); : On vérifie que les exercices récupérés par le service sont bien affectés à la propriété exercices du composant.
+  */
   it('should call getExercices and display exercices', () => {
     const mockExercices = [
       {
