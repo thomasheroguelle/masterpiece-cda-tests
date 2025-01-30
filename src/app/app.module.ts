@@ -4,11 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ExercicesComponent } from './components/exercices/exercices.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'primeng/carousel';
 import { provideHttpClient } from '@angular/common/http';
+import { providePrimeNG } from 'primeng/config';
+
 @NgModule({
-  declarations: [AppComponent, ExercicesComponent],
-  imports: [BrowserModule, AppRoutingModule],
-  providers: [provideHttpClient()],
+  declarations: [AppComponent, ExercicesComponent, DashboardComponent, CarouselComponent],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, CarouselModule],
+  providers: [
+    provideHttpClient(),
+    provideAnimations(), 
+    providePrimeNG({
+    })
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

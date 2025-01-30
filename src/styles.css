@@ -3,3 +3,12 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.p-carousel-item  { 
+    display: flex!important;
+    justify-content: center!important;
+}
+
+.exercice-item-content h4 { 
+    text-align: center!important;
+}

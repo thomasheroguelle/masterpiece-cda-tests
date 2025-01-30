@@ -32,8 +32,7 @@ module.exports = function (config) {
       reporters: [{ type: "html" }, { type: "text-summary" }, { type: "lcov" }],
     },
     reporters: ["progress", "kjhtml"],
-    browsers: ["ChromeHeadless"],
-    singleRun: true,
+    browsers: ["Chrome"],
     restartOnFileChange: true,
   });
 };

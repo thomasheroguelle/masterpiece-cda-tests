@@ -26,7 +26,7 @@
       "type": "Poids du corps",
       "difficultyLevel": "Avancé",
       "bodypart": ["Dos", "Biceps"],
-      "gifUrl": "https://example.com/pullups.gif",
+      "gifUrl": "assets/exercices/pullups.jpg",
       "secondaryMuscles": ["Épaules", "Avant-bras"],
       "equipment": "Poids du corps"
     },
@@ -36,7 +36,7 @@
       "type": "Cardio",
       "difficultyLevel": "Intermédiaire",
       "bodypart": ["Corps entier"],
-      "gifUrl": "https://example.com/burpees.gif",
+      "gifUrl": "assets/exercices/burpees.jpg",
       "secondaryMuscles": ["Core", "Épaules"],
       "equipment": "Poids du corps"
     },
@@ -46,7 +46,7 @@
       "type": "Haltérophilie",
       "difficultyLevel": "Avancé",
       "bodypart": ["Dos", "Jambes", "Fessiers"],
-      "gifUrl": "https://example.com/deadlifts.gif",
+      "gifUrl": "assets/exercices/sdt.jpg",
       "secondaryMuscles": ["Core", "Avant-bras"],
       "equipment": "Poids"
     },
@@ -56,7 +56,7 @@
       "type": "Poids du corps",
       "difficultyLevel": "Débutant",
       "bodypart": ["Jambes", "Fessiers"],
-      "gifUrl": "https://example.com/lunges.gif",
+      "gifUrl": "assets/exercices/fentes.jpg",
       "secondaryMuscles": ["Core", "Fléchisseurs de hanches"],
       "equipment": "Poids du corps"
     },
@@ -66,7 +66,7 @@
       "type": "Poids du corps",
       "difficultyLevel": "Débutant",
       "bodypart": ["Core"],
-      "gifUrl": "https://example.com/plank.gif",
+      "gifUrl": "assets/exercices/planche.jpg",
       "secondaryMuscles": ["Épaules", "Fessiers"],
       "equipment": "Poids du corps"
     },
@@ -76,7 +76,7 @@
       "type": "Haltérophilie",
       "difficultyLevel": "Intermédiaire",
       "bodypart": ["Poitrine", "Triceps", "Épaules"],
-      "gifUrl": "https://example.com/dumbbell_bench_press.gif",
+      "gifUrl": "assets/exercices/developpe-couche-halteres-exercice-musculation.jpg",
       "secondaryMuscles": ["Avant-bras"],
       "equipment": "Poids"
     },
@@ -86,19 +86,9 @@
       "type": "Haltérophilie",
       "difficultyLevel": "Débutant",
       "bodypart": ["Bras"],
-      "gifUrl": "https://example.com/bicep_curls.gif",
+      "gifUrl": "assets/exercices/curl-haltere.jpg",
       "secondaryMuscles": ["Avant-bras"],
       "equipment": "Poids"
-    },
-    {
-      "name": "Escaladeurs",
-      "instructions": "Commencez en position de pompe, puis alternez en amenant vos genoux vers votre poitrine dans un mouvement de course.",
-      "type": "Cardio",
-      "difficultyLevel": "Intermédiaire",
-      "bodypart": ["Core", "Corps entier"],
-      "gifUrl": "https://example.com/mountain_climbers.gif",
-      "secondaryMuscles": ["Épaules", "Jambes"],
-      "equipment": "Poids du corps"
     },
     {
       "name": "Développé militaire",
@@ -106,7 +96,7 @@
       "type": "Haltérophilie",
       "difficultyLevel": "Intermédiaire",
       "bodypart": ["Épaules", "Triceps"],
-      "gifUrl": "https://example.com/overhead_press.gif",
+      "gifUrl": "assets/exercices/developpe-militaire-haltere.jpg",
       "secondaryMuscles": ["Core", "Trapèzes"],
       "equipment": "Poids"
     },
@@ -116,7 +106,7 @@
       "type": "Poids du corps",
       "difficultyLevel": "Débutant",
       "bodypart": ["Core"],
-      "gifUrl": "https://example.com/leg_raises.gif",
+      "gifUrl": "assets/exercices/crunch-avec-jambes-verticales.jpg",
       "secondaryMuscles": ["Fléchisseurs de hanches"],
       "equipment": "Poids du corps"
     }
