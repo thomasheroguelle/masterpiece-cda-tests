@@ -13,19 +13,19 @@
     </ng-template>
 </p-carousel> -->
 
-
-<p-carousel [value]="exercices" [numVisible]="3" [numScroll]="3" [circular]="false"
-  [responsiveOptions]="responsiveOptions">
-  
+<p-carousel
+  [value]="exercices"
+  [numVisible]="3"
+  [numScroll]="3"
+  [circular]="false"
+  [responsiveOptions]="responsiveOptions"
+>
   <ng-template let-exercice pTemplate="item">
     <div class="exercice-item">
       <div class="exercice-item-content">
         <img [src]="exercice.gifUrl" [alt]="exercice.name" />
-        <h4 class="p-mb-1">{{exercice.name}}</h4>
+        <h4 class="p-mb-1">{{ exercice.name }}</h4>
       </div>
     </div>
   </ng-template>
 </p-carousel>
-
-
-

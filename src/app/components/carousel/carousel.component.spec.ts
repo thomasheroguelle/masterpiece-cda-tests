@@ -12,9 +12,8 @@ describe('CarouselComponent', () => {
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, CarouselModule],
 
-      declarations: [CarouselComponent]
-    })
-      .compileComponents();
+      declarations: [CarouselComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(CarouselComponent);
     component = fixture.componentInstance;
