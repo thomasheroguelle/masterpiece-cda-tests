@@ -1,0 +1,31 @@
+<!-- <p-carousel class="carousel" [value]="exercices" [numVisible]="5" [numScroll]="3" [circular]="false">
+    <ng-template let-exercice #item>
+        <div class="card border border-surface rounded-border m-2 p-4">
+            <div class="mb-4">
+                <div class="relative mx-auto">
+                    <img [src]="exercice.gifUrl" [alt]="exercice.name" />
+                </div>
+            </div>
+            <div class="mb-4 font-medium text-center">
+                {{ exercice.name }}
+            </div>
+        </div>
+    </ng-template>
+</p-carousel> -->
+
+<p-carousel
+  [value]="exercices"
+  [numVisible]="3"
+  [numScroll]="3"
+  [circular]="false"
+  [responsiveOptions]="responsiveOptions"
+>
+  <ng-template let-exercice pTemplate="item">
+    <div class="exercice-item">
+      <div class="exercice-item-content">
+        <img [src]="exercice.gifUrl" [alt]="exercice.name" />
+        <h4 class="p-mb-1">{{ exercice.name }}</h4>
+      </div>
+    </div>
+  </ng-template>
+</p-carousel>

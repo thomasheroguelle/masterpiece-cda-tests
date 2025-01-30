@@ -33,11 +33,18 @@ jobs:
       - name: Install Angular CLI
         run: npm install -g @angular/cli
 
+      - name: Install Google Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget
+          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+          sudo apt install -y ./google-chrome-stable_current_amd64.deb
+
       - name: Run Prettier (check format)
         run: npx prettier --check .
 
       - name: Run tests with coverage
-        run: ng test
+        run: ng test --watch=false --browsers=ChromeHeadless
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
