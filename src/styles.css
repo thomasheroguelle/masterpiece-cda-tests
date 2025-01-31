@@ -4,6 +4,10 @@
 
 @tailwind utilities;
 
+* {
+  margin: 0;
+}
+
 .p-carousel-item {
   display: flex !important;
   justify-content: center !important;
@@ -11,4 +15,8 @@
 
 .exercice-item-content h4 {
   text-align: center !important;
+}
+
+li {
+  list-style-type: none;
 }

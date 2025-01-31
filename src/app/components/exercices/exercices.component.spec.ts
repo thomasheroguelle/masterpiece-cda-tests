@@ -45,7 +45,7 @@ describe('ExercicesComponent', () => {
   it('should call getExercices and display exercices', () => {
     const mockExercices = [
       {
-        id: 'id',
+        id: '1',
         name: 'Pompes',
         instructions: 'Commencez en position de planche...',
         type: 'Poids du corps',
@@ -54,6 +54,11 @@ describe('ExercicesComponent', () => {
         gifUrl: 'assets/exercices/pushup.jpg',
         secondaryMuscles: ['Core', 'Bas du dos'],
         equipment: 'Poids du corps',
+        steps: [
+          'Positionnez vos mains un peu plus larges que vos épaules.',
+          'Abaissez votre corps en fléchissant les coudes.',
+          'Poussez avec vos bras pour revenir à la position de départ.',
+        ],
       },
     ];
 
