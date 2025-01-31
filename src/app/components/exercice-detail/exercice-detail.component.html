@@ -1,0 +1,30 @@
+<main>
+  <section class="header-container bg-exercices_header p-4 text-left">
+    <h1 class="text-xl font-bold">{{ exercice?.name }}</h1>
+    <p>{{ exercice?.instructions }}</p>
+  </section>
+
+  <section class="main-container m-20 flex justify-between items-center">
+    <div>
+      <h2 class="text-xl font-semibold">Execution du mouvement</h2>
+      <img
+        src="{{ exercice?.gifUrl }}"
+        alt="{{ exercice?.name }}"
+        class="max-h-32 object-contain"
+      />
+    </div>
+
+    <div>
+      <b> {{ exercice?.difficultyLevel }} </b>
+      <p><b> Equipement :</b> {{ exercice?.equipment }}</p>
+      <p><b> Muscles sollicités :</b> {{ exercice?.bodypart }}</p>
+    </div>
+  </section>
+
+  <section class="m-20">
+    <h2 class="text-xl font-semibold">Guide étape par étape</h2>
+    <div *ngFor="let step of exercice?.steps">
+      {{ step }}
+    </div>
+  </section>
+</main>

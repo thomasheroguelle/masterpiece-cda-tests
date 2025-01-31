@@ -46,7 +46,7 @@ describe('ExercicesService', () => {
     const mockExercises: Exercices[] = [
       // on mock
       {
-        id: 'id',
+        id: '1',
         name: 'Pompes',
         instructions: 'Commencez en position de planche...',
         type: 'Poids du corps',
@@ -55,6 +55,11 @@ describe('ExercicesService', () => {
         gifUrl: 'assets/exercices/pushup.jpg',
         secondaryMuscles: ['Core', 'Bas du dos'],
         equipment: 'Poids du corps',
+        steps: [
+          'Positionnez vos mains un peu plus larges que vos épaules.',
+          'Abaissez votre corps en fléchissant les coudes.',
+          'Poussez avec vos bras pour revenir à la position de départ.',
+        ],
       },
     ];
     service.getExercices().subscribe((res) => {
@@ -64,5 +69,34 @@ describe('ExercicesService', () => {
     const req = httpMock.expectOne(environment.LOCAL_DB); // on précise l'url de notre requete
     expect(req.request.method).toBe('GET'); // on s'attend a ce que la requete soit de type GET
     req.flush(mockExercises); // simule une réponse
+  });
+
+  it('should call getExerciceById and return the correct exercice', () => {
+    const mockExercice = {
+      id: '1',
+      name: 'Pompes',
+      instructions: 'Commencez en position de planche...',
+      type: 'Poids du corps',
+      difficultyLevel: 'Intermédiaire',
+      bodypart: ['Poitrine', 'Triceps', 'Épaules'],
+      gifUrl: 'assets/exercices/pushup.jpg',
+      secondaryMuscles: ['Core', 'Bas du dos'],
+      equipment: 'Poids du corps',
+      steps: [
+        'Positionnez vos mains un peu plus larges que vos épaules.',
+        'Abaissez votre corps en fléchissant les coudes.',
+        'Poussez avec vos bras pour revenir à la position de départ.',
+      ],
+    };
+    service.getExerciceById(mockExercice.id).subscribe((res) => {
+      expect(res).toEqual(mockExercice);
+    });
+
+    const req = httpMock.expectOne(
+      `${environment.LOCAL_DB}/${mockExercice.id}`,
+    );
+
+    expect(req.request.method).toBe('GET');
+    req.flush(mockExercice);
   });
 });

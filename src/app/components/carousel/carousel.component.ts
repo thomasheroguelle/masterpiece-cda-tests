@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Exercices } from '../../../interfaces/Exercices';
 import { ExercicesService } from '../../services/json-web-server/exercices.service';
-import { CarouselResponsiveOptions } from 'primeng/carousel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -12,7 +12,10 @@ export class CarouselComponent {
   exercices: Exercices[] = [];
   responsiveOptions;
 
-  constructor(private readonly exercicesService: ExercicesService) {
+  constructor(
+    private readonly exercicesService: ExercicesService,
+    private readonly route: Router,
+  ) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -39,5 +42,9 @@ export class CarouselComponent {
         this.exercices = data;
       },
     });
+  }
+
+  exerciceDetail(id: string) {
+    this.route.navigate(['exercice', id]);
   }
 }

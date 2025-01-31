@@ -3,6 +3,11 @@
     {
       "name": "Pompes",
       "instructions": "Commencez en position de planche avec les mains placées légèrement plus larges que la largeur des épaules. Abaissez votre corps jusqu'à ce que votre poitrine touche presque le sol, puis poussez vers le haut.",
+      "steps": [
+        "Positionnez vos mains un peu plus larges que vos épaules.",
+        "Abaissez votre corps en fléchissant les coudes.",
+        "Poussez avec vos bras pour revenir à la position de départ."
+      ],
       "type": "Poids du corps",
       "difficultyLevel": "Intermédiaire",
       "bodypart": ["Poitrine", "Triceps", "Épaules"],
@@ -13,6 +18,12 @@
     {
       "name": "Squats",
       "instructions": "Placez vos pieds à la largeur des épaules, abaissez votre corps en fléchissant les genoux et les hanches jusqu'à ce que vos cuisses soient parallèles au sol, puis relevez-vous.",
+      "steps": [
+        "Placez vos pieds à la largeur des épaules.",
+        "Fléchissez les genoux et les hanches.",
+        "Descendez jusqu'à ce que vos cuisses soient parallèles au sol.",
+        "Relevez-vous en poussant sur vos talons."
+      ],
       "type": "Poids du corps",
       "difficultyLevel": "Débutant",
       "bodypart": ["Jambes", "Fessiers"],
@@ -23,6 +34,11 @@
     {
       "name": "Tractions",
       "instructions": "Saisissez une barre de traction avec les paumes tournées vers l'extérieur. Tirez votre corps jusqu'à ce que votre menton soit au-dessus de la barre, puis abaissez-vous lentement.",
+      "steps": [
+        "Saisissez une barre de traction avec les paumes vers l'extérieur.",
+        "Tirez votre corps vers le haut jusqu'à ce que votre menton dépasse la barre.",
+        "Abaissez-vous lentement et contrôlez le mouvement."
+      ],
       "type": "Poids du corps",
       "difficultyLevel": "Avancé",
       "bodypart": ["Dos", "Biceps"],
@@ -33,6 +49,12 @@
     {
       "name": "Burpees",
       "instructions": "Commencez en position debout, puis descendez en position de squat et envoyez vos pieds en arrière pour vous retrouver en position de planche. Faites une pompe, puis sautez pour revenir sur vos pieds et sautez en l'air.",
+      "steps": [
+        "Commencez en position debout.",
+        "Descendez en position de squat et envoyez vos pieds en arrière.",
+        "Faites une pompe.",
+        "Revenez en position de squat, puis sautez en l'air."
+      ],
       "type": "Cardio",
       "difficultyLevel": "Intermédiaire",
       "bodypart": ["Corps entier"],
@@ -43,6 +65,13 @@
     {
       "name": "Soulevés de terre",
       "instructions": "Placez-vous avec les pieds à la largeur des épaules, fléchissez les genoux et baissez les hanches, saisissez une barre. Soulevez la barre en redressant vos jambes et votre dos, puis abaissez-la.",
+      "steps": [
+        "Placez-vous avec les pieds à la largeur des épaules.",
+        "Fléchissez les genoux et les hanches.",
+        "Saisissez la barre.",
+        "Soulevez la barre en redressant vos jambes et votre dos.",
+        "Abaissez la barre lentement en contrôlant le mouvement."
+      ],
       "type": "Haltérophilie",
       "difficultyLevel": "Avancé",
       "bodypart": ["Dos", "Jambes", "Fessiers"],
@@ -53,6 +82,12 @@
     {
       "name": "Fentes",
       "instructions": "Avancez d'un pas avec une jambe, abaissez vos hanches pour faire descendre votre genou arrière vers le sol. Poussez sur votre jambe avant pour revenir à la position de départ et alternez les jambes.",
+      "steps": [
+        "Avancez d'un pas avec une jambe.",
+        "Abaissez vos hanches pour faire descendre votre genou arrière.",
+        "Poussez sur votre jambe avant pour revenir à la position de départ.",
+        "Alternez les jambes."
+      ],
       "type": "Poids du corps",
       "difficultyLevel": "Débutant",
       "bodypart": ["Jambes", "Fessiers"],
@@ -63,6 +98,11 @@
     {
       "name": "Planche",
       "instructions": "Mettez-vous en position de planche sur les avant-bras, en gardant le corps bien droit de la tête aux talons. Maintenez la position sans laisser vos hanches descendre.",
+      "steps": [
+        "Placez-vous sur les avant-bras.",
+        "Maintenez le corps droit, sans laisser les hanches descendre.",
+        "Gardez la position aussi longtemps que possible."
+      ],
       "type": "Poids du corps",
       "difficultyLevel": "Débutant",
       "bodypart": ["Core"],
@@ -73,6 +113,12 @@
     {
       "name": "Développé couché avec haltères",
       "instructions": "Allongez-vous sur un banc avec un haltère dans chaque main, poussez les haltères vers le haut jusqu'à ce que vos bras soient complètement tendus, puis abaissez les haltères au niveau de la poitrine.",
+      "steps": [
+        "Allongez-vous sur un banc avec un haltère dans chaque main.",
+        "Poussez les haltères vers le haut jusqu'à ce que vos bras soient tendus.",
+        "Abaissez les haltères jusqu'à la poitrine.",
+        "Relevez les haltères pour revenir à la position de départ."
+      ],
       "type": "Haltérophilie",
       "difficultyLevel": "Intermédiaire",
       "bodypart": ["Poitrine", "Triceps", "Épaules"],
@@ -88,7 +134,14 @@
       "bodypart": ["Bras"],
       "gifUrl": "assets/exercices/curl-haltere.jpg",
       "secondaryMuscles": ["Avant-bras"],
-      "equipment": "Poids"
+      "equipment": "Poids",
+      "steps": [
+        "Tenez un haltère dans chaque main avec les bras tendus.",
+        "Gardez les coudes près du corps pendant le mouvement.",
+        "Soulevez les haltères jusqu'à ce qu'ils atteignent le niveau des épaules.",
+        "Redescendez lentement en contrôlant le mouvement.",
+        "Répétez."
+      ]
     },
     {
       "name": "Développé militaire",
@@ -98,7 +151,15 @@
       "bodypart": ["Épaules", "Triceps"],
       "gifUrl": "assets/exercices/developpe-militaire-haltere.jpg",
       "secondaryMuscles": ["Core", "Trapèzes"],
-      "equipment": "Poids"
+      "equipment": "Poids",
+      "steps": [
+        "Tenez la barre ou les haltères à hauteur d'épaules.",
+        "Positionnez vos pieds à la largeur des épaules et gardez une posture stable.",
+        "Poussez la barre ou les haltères au-dessus de votre tête.",
+        "Assurez-vous que vos bras sont complètement tendus.",
+        "Redescendez lentement à la position de départ.",
+        "Répétez."
+      ]
     },
     {
       "name": "Relevé de jambes",
@@ -108,7 +169,13 @@
       "bodypart": ["Core"],
       "gifUrl": "assets/exercices/crunch-avec-jambes-verticales.jpg",
       "secondaryMuscles": ["Fléchisseurs de hanches"],
-      "equipment": "Poids du corps"
+      "equipment": "Poids du corps",
+      "steps": [
+        "Allongez-vous sur le dos avec les jambes tendues.",
+        "Soulevez vos jambes vers le plafond tout en les gardant droites.",
+        "Redescendez lentement sans que vos pieds touchent le sol.",
+        "Répétez."
+      ]
     }
   ]
 }

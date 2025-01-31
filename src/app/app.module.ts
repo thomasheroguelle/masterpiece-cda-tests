@@ -13,6 +13,7 @@ import {
 import { CarouselModule } from 'primeng/carousel';
 import { provideHttpClient } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
+import { ExerciceDetailComponent } from './components/exercice-detail/exercice-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { providePrimeNG } from 'primeng/config';
     ExercicesComponent,
     DashboardComponent,
     CarouselComponent,
+    ExerciceDetailComponent,
   ],
   imports: [
     BrowserModule,

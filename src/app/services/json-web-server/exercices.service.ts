@@ -13,4 +13,8 @@ export class ExercicesService {
   getExercices(): Observable<Exercices[]> {
     return this.http.get<Exercices[]>(environment.LOCAL_DB);
   }
+
+  getExerciceById(id: string): Observable<Exercices> {
+    return this.http.get<Exercices>(`${environment.LOCAL_DB}/${id}`);
+  }
 }

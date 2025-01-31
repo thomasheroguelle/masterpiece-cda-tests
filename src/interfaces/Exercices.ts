@@ -8,4 +8,5 @@ export interface Exercices {
   equipment: string;
   secondaryMuscles: string[];
   gifUrl: string;
+  steps: string[];
 }
