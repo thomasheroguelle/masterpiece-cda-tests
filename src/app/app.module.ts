@@ -14,6 +14,8 @@ import { CarouselModule } from 'primeng/carousel';
 import { provideHttpClient } from '@angular/common/http';
 import { providePrimeNG } from 'primeng/config';
 import { ExerciceDetailComponent } from './components/exercice-detail/exercice-detail.component';
+import { BodyAnatomyComponent } from './components/body-anatomy/body-anatomy.component';
+import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/body-anatomy-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { ExerciceDetailComponent } from './components/exercice-detail/exercice-d
     DashboardComponent,
     CarouselComponent,
     ExerciceDetailComponent,
+    BodyAnatomyComponent,
+    BodyAnatomyDetailComponent,
   ],
   imports: [
     BrowserModule,

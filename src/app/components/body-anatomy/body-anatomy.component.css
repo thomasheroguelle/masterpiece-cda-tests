@@ -1,0 +1,6 @@
+.test {
+  cursor: pointer;
+}
+.test:hover {
+  fill: red;
+}
