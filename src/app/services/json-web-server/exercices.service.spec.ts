@@ -6,7 +6,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { environment } from '../../../environment/environment';
-import { Exercices } from '../../../interfaces/Exercices';
+import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
 
 describe('ExercicesService', () => {
   let service: ExercicesService;
@@ -51,7 +51,8 @@ describe('ExercicesService', () => {
         instructions: 'Commencez en position de planche...',
         type: 'Poids du corps',
         difficultyLevel: 'Intermédiaire',
-        bodypart: ['Poitrine', 'Triceps', 'Épaules'],
+        bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
+
         gifUrl: 'assets/exercices/pushup.jpg',
         secondaryMuscles: ['Core', 'Bas du dos'],
         equipment: 'Poids du corps',
@@ -78,7 +79,7 @@ describe('ExercicesService', () => {
       instructions: 'Commencez en position de planche...',
       type: 'Poids du corps',
       difficultyLevel: 'Intermédiaire',
-      bodypart: ['Poitrine', 'Triceps', 'Épaules'],
+      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
       gifUrl: 'assets/exercices/pushup.jpg',
       secondaryMuscles: ['Core', 'Bas du dos'],
       equipment: 'Poids du corps',

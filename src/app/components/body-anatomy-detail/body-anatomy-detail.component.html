@@ -1,0 +1,26 @@
+<main>
+  <section class="header-container bg-exercices_header p-4 text-left">
+    <h1 class="text-xl font-bold">{{ bodypart }}</h1>
+  </section>
+
+  <section>
+    <ul
+      class="flex justify-around items-center mb-6 p-6 border-b-2 border-separation_line"
+      *ngFor="let exercice of filteredExercises"
+    >
+      <aside>
+        <li>
+          <b>{{ exercice.name }}</b>
+        </li>
+        <li><b>Muslces sollicités : </b> {{ exercice.bodypart }}</li>
+      </aside>
+      <img [src]="exercice.gifUrl" alt="{{ exercice.name }}" />
+      <button
+        (click)="exerciceDetail(exercice.id)"
+        class="bg-mainColor text-white shadow-lg hover:bg-mainColorBtnHover font-bold py-2 px-4 rounded inline-flex items-center"
+      >
+        Voir le detail
+      </button>
+    </ul>
+  </section>
+</main>

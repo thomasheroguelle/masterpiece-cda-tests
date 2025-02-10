@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Exercices } from '../../../interfaces/Exercices';
+import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environment/environment';
 

@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExercicesService } from '../../services/json-web-server/exercices.service';
 import { of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { Bodyparts } from '../../../interfaces/Exercices';
 
 describe('ExerciceDetailComponent', () => {
   let component: ExerciceDetailComponent;
@@ -43,7 +44,7 @@ describe('ExerciceDetailComponent', () => {
       instructions: 'Commencez en position de planche...',
       type: 'Poids du corps',
       difficultyLevel: 'Intermédiaire',
-      bodypart: ['Poitrine', 'Triceps', 'Épaules'],
+      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
       gifUrl: 'assets/exercices/pushup.jpg',
       secondaryMuscles: ['Core', 'Bas du dos'],
       equipment: 'Poids du corps',
