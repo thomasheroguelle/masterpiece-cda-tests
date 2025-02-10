@@ -16,6 +16,8 @@ import { providePrimeNG } from 'primeng/config';
 import { ExerciceDetailComponent } from './components/exercice-detail/exercice-detail.component';
 import { BodyAnatomyComponent } from './components/body-anatomy/body-anatomy.component';
 import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/body-anatomy-detail.component';
+import { NewProgramComponent } from './components/new-program/new-program.component';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,14 @@ import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/bod
     ExerciceDetailComponent,
     BodyAnatomyComponent,
     BodyAnatomyDetailComponent,
+    NewProgramComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     CarouselModule,
+    ReactiveFormsModule,
   ],
   providers: [provideHttpClient(), provideAnimations(), providePrimeNG({})],
   bootstrap: [AppComponent],

@@ -1,0 +1,47 @@
+<section class="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-lg mt-10">
+  <div class="flex items-center w-full mb-6 border-b-2 pb-3">
+    <h3 class="text-xl font-semibold text-gray-700">Créer un programme</h3>
+  </div>
+
+  <form [formGroup]="programForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label
+        for="training-title"
+        class="block text-sm font-medium text-gray-600"
+        >Titre de l'entraînement</label
+      >
+      <input
+        formControlName="programName"
+        id="title"
+        type="text"
+        class="mt-1 w-full p-3 border rounded-lg focus:ring-2 bg-gray-100 text-gray-700"
+        placeholder="Titre de l'entraînement"
+        required
+      />
+    </div>
+
+    <div class="mb-4">
+      <label
+        for="training-description"
+        class="block text-sm font-medium text-gray-600"
+        >Description de l'entraînement</label
+      >
+      <textarea
+        formControlName="programDescription"
+        id="description"
+        type="text"
+        placeholder="Description de l'entraînement"
+        class="mt-1 w-full p-3 border rounded-lg focus:ring-2 bg-gray-100 text-gray-700"
+        required
+      >
+      </textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full py-3 mt-4 bg-mainColor text-white focus:outline-none font-semibold rounded-lg hover:bg-mainColorBtnHover transition duration-300"
+    >
+      Créer le programme
+    </button>
+  </form>
+</section>
