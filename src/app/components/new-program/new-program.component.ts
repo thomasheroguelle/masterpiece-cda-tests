@@ -23,8 +23,6 @@ export class NewProgramComponent {
 
   onSubmit() {
     if (this.programForm.valid) {
-      const { programName, programDescription } = this.programForm.value;
-
       const newProgram: Program = {
         name: this.programForm.value.programName,
         description: this.programForm.value.programDescription,
