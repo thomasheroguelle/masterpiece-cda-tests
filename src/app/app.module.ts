@@ -17,7 +17,7 @@ import { ExerciceDetailComponent } from './components/exercice-detail/exercice-d
 import { BodyAnatomyComponent } from './components/body-anatomy/body-anatomy.component';
 import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/body-anatomy-detail.component';
 import { NewProgramComponent } from './components/new-program/new-program.component';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
