@@ -45,6 +45,11 @@
         class="p-3 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 flex justify-between items-center"
       >
         <span>{{ exercice.name }}</span>
+
+        <i
+          class="fa-solid fa-trash cursor-pointer text-red-500 hover:text-red-400 transition-colors duration-300"
+          (click)="deleteExercise(exercice)"
+        ></i>
       </li>
     </ul>
 

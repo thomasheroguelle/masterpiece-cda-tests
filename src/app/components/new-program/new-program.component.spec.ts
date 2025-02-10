@@ -7,6 +7,7 @@ import { of } from 'rxjs';
 import { Program } from '../../../interfaces/Program';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { PopupComponent } from '../popup/popup.component';
+import { Bodyparts } from '../../../interfaces/Exercices';
 
 describe('NewProgramComponent', () => {
   let component: NewProgramComponent;
@@ -48,5 +49,27 @@ describe('NewProgramComponent', () => {
     component.onSubmit();
 
     expect(programService.saveProgram).toHaveBeenCalledWith(mockProgram);
+  });
+
+  it('should delete an exercise from the program', () => {
+    const mockExercices = {
+      id: '1',
+      name: 'Pompes',
+      instructions: 'Commencez en position de planche...',
+      type: 'Poids du corps',
+      difficultyLevel: 'Intermédiaire',
+      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
+      gifUrl: 'assets/exercices/pushup.jpg',
+      secondaryMuscles: ['Core', 'Bas du dos'],
+      equipment: 'Poids du corps',
+      steps: [
+        'Positionnez vos mains un peu plus larges que vos épaules.',
+        'Abaissez votre corps en fléchissant les coudes.',
+        'Poussez avec vos bras pour revenir à la position de départ.',
+      ],
+    };
+    component.exercices = [mockExercices];
+    component.deleteExercise(mockExercices);
+    expect(component.exercices.length).toBe(0);
   });
 });

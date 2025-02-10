@@ -24,4 +24,10 @@ export class ExercisesLocalStorageService {
     const exercices = data ? JSON.parse(data) : [];
     return exercices;
   }
+
+  deleteExercice(id: string) {
+    const exercises = this.getExercices();
+    const updatedExercise = exercises.filter((exercise) => exercise.id !== id);
+    this.saveExercice(updatedExercise);
+  }
 }

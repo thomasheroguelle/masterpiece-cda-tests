@@ -43,4 +43,8 @@ export class NewProgramComponent {
       this.programForm.reset();
     }
   }
+
+  deleteExercise(exercise: Exercices) {
+    this.exercicesLocalStorageService.deleteExercice(exercise.id);
+  }
 }
