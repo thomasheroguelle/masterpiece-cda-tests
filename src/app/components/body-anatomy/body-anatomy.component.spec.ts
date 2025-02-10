@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BodyAnatomyComponent } from './body-anatomy.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('BodyAnatomyComponent', () => {
   let component: BodyAnatomyComponent;
@@ -8,6 +9,7 @@ describe('BodyAnatomyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [BodyAnatomyComponent],
     }).compileComponents();
 

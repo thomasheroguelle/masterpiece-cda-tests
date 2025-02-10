@@ -12,10 +12,11 @@
         <li>
           <b>{{ exercice.name }}</b>
         </li>
-        <li><b>Equipement : </b> {{ exercice.bodypart }}</li>
+        <li><b>Muslces sollicités : </b> {{ exercice.bodypart }}</li>
       </aside>
       <img [src]="exercice.gifUrl" alt="{{ exercice.name }}" />
       <button
+        (click)="exerciceDetail(exercice.id)"
         class="bg-mainColor text-white shadow-lg hover:bg-mainColorBtnHover font-bold py-2 px-4 rounded inline-flex items-center"
       >
         Voir le detail

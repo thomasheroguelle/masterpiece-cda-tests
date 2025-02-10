@@ -12,9 +12,11 @@ export class BodyAnatomyDetailComponent {
   exercices?: Exercices[] = [];
   bodypart!: Bodyparts;
   filteredExercises: Exercices[] = [];
+  exerciceID?: Exercices;
 
   constructor(
     private readonly route: ActivatedRoute,
+    private readonly router: Router,
     private readonly exercicesService: ExercicesService,
   ) {}
 
@@ -36,5 +38,12 @@ export class BodyAnatomyDetailComponent {
       );
       console.log(this.filteredExercises);
     });
+  }
+
+  exerciceDetail(exerciceID: string) {
+    this.exercicesService.getExerciceById(exerciceID).subscribe((exercice) => {
+      this.exerciceID = exercice;
+    });
+    this.router.navigate(['exercice', exerciceID]);
   }
 }
