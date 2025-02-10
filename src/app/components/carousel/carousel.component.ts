@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Exercices } from '../../../interfaces/Exercices';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class CarouselComponent {
   responsiveOptions;
 
   constructor(
-    private readonly exercicesService: ExercicesService,
+    private readonly exercicesService: ExercicesDbService,
     private readonly route: Router,
   ) {
     this.responsiveOptions = [

@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ExercicesService } from './exercices.service';
+import { ExercicesDbService } from './exercicesdb.service';
 import {
   HttpClientTestingModule,
   HttpTestingController,
 } from '@angular/common/http/testing';
-import { environment } from '../../../environment/environment';
-import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
+import { environment } from '../../../../environment/environment';
+import { Bodyparts, Exercices } from '../../../../interfaces/Exercices';
 
 describe('ExercicesService', () => {
-  let service: ExercicesService;
+  let service: ExercicesDbService;
   let httpMock: HttpTestingController;
 
   beforeEach(() => {
@@ -17,9 +17,9 @@ describe('ExercicesService', () => {
     TestBed.configureTestingModule({
       // TestBed c'est l'outil fourni par Angular pour configurer et initialiser son environnement de test
       imports: [HttpClientTestingModule], // ExercicesService utilise httpClient pour effectuer des requetes, HttpClientTestingModule remplace HttpClient par une version mockée qui intercepte les requetes et test leur comportement
-      providers: [ExercicesService], // Fournit une instance du service ExercicesServie
+      providers: [ExercicesDbService], // Fournit une instance du service ExercicesServie
     });
-    service = TestBed.inject(ExercicesService); // intercepte et simule des réponses
+    service = TestBed.inject(ExercicesDbService); // intercepte et simule des réponses
     httpMock = TestBed.inject(HttpTestingController);
   });
 

@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ExerciceDetailComponent } from './exercice-detail.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { of } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Bodyparts } from '../../../interfaces/Exercices';
@@ -10,7 +10,7 @@ import { Bodyparts } from '../../../interfaces/Exercices';
 describe('ExerciceDetailComponent', () => {
   let component: ExerciceDetailComponent;
   let fixture: ComponentFixture<ExerciceDetailComponent>;
-  let mockExercicesServices: jasmine.SpyObj<ExercicesService>;
+  let mockExercicesServices: jasmine.SpyObj<ExercicesDbService>;
 
   beforeEach(async () => {
     mockExercicesServices = jasmine.createSpyObj('ExercicesService', [
@@ -24,7 +24,7 @@ describe('ExerciceDetailComponent', () => {
         // Simuler ActivatedRoute pour renvoyer un id
         { provide: ActivatedRoute, useValue: { params: of({ id: '1' }) } },
         // Fournir le mock de ExercicesService
-        { provide: ExercicesService, useValue: mockExercicesServices },
+        { provide: ExercicesDbService, useValue: mockExercicesServices },
       ],
     }).compileComponents();
 

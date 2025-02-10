@@ -18,6 +18,9 @@ import { BodyAnatomyComponent } from './components/body-anatomy/body-anatomy.com
 import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/body-anatomy-detail.component';
 import { NewProgramComponent } from './components/new-program/new-program.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PopupComponent } from './components/popup/popup.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BodyAnatomyComponent,
     BodyAnatomyDetailComponent,
     NewProgramComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     CarouselModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [provideHttpClient(), provideAnimations(), providePrimeNG({})],
   bootstrap: [AppComponent],

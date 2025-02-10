@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 
 @Component({
   selector: 'app-body-anatomy-detail',
@@ -17,7 +17,7 @@ export class BodyAnatomyDetailComponent {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-    private readonly exercicesService: ExercicesService,
+    private readonly exercicesService: ExercicesDbService,
   ) {}
 
   ngOnInit() {
