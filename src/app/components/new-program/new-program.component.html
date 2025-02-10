@@ -37,6 +37,17 @@
       </textarea>
     </div>
 
+    <app-popup class="w-full"></app-popup>
+
+    <ul class="space-y-3 w-full flex flex-col mt-6">
+      <li
+        *ngFor="let exercice of exercices"
+        class="p-3 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 flex justify-between items-center"
+      >
+        <span>{{ exercice.name }}</span>
+      </li>
+    </ul>
+
     <button
       type="submit"
       class="w-full py-3 mt-4 bg-mainColor text-white focus:outline-none font-semibold rounded-lg hover:bg-mainColorBtnHover transition duration-300"

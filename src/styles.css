@@ -24,3 +24,17 @@ li {
 .header-container {
   padding: 70px;
 }
+
+/* Angular Materials  */
+.cdk-overlay-pane {
+  background-color: #fff;
+}
+
+mat-form-field {
+  border: 1px solid #e6e8ec;
+  border-radius: 4px;
+}
+.mat-mdc-select-placeholder {
+  color: #999 !important;
+  font-size: 14px;
+}

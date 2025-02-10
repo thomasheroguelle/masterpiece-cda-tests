@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Exercices } from '../../../interfaces/Exercices';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 
 @Component({
   selector: 'app-exercices',
@@ -10,7 +10,7 @@ import { ExercicesService } from '../../services/json-web-server/exercices.servi
 export class ExercicesComponent {
   exercices!: Exercices[];
 
-  constructor(private readonly exercicesService: ExercicesService) {}
+  constructor(private readonly exercicesService: ExercicesDbService) {}
 
   ngOnInit() {
     this.getExerciceList();

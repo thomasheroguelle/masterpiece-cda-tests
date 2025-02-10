@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
+import { Bodyparts, Exercices } from '../../../../interfaces/Exercices';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environment/environment';
+import { environment } from '../../../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ExercicesService {
+export class ExercicesDbService {
   constructor(private readonly http: HttpClient) {}
 
   getExercices(): Observable<Exercices[]> {

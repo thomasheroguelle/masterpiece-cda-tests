@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { BodyAnatomyDetailComponent } from './body-anatomy-detail.component';
 import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 describe('BodyAnatomyDetailComponent', () => {
   let component: BodyAnatomyDetailComponent;
   let fixture: ComponentFixture<BodyAnatomyDetailComponent>;
-  let exercicesService: jasmine.SpyObj<ExercicesService>;
+  let exercicesService: jasmine.SpyObj<ExercicesDbService>;
   let router: jasmine.SpyObj<Router>;
 
   const mockExercice: Exercices[] = [
@@ -65,7 +65,7 @@ describe('BodyAnatomyDetailComponent', () => {
       imports: [HttpClientTestingModule],
       declarations: [BodyAnatomyDetailComponent],
       providers: [
-        { provide: ExercicesService, useValue: exercicesServiceMock },
+        { provide: ExercicesDbService, useValue: exercicesServiceMock },
         {
           provide: ActivatedRoute,
           useValue: { params: of({ bodypart: 'Poitrine' }) },
@@ -77,8 +77,8 @@ describe('BodyAnatomyDetailComponent', () => {
     fixture = TestBed.createComponent(BodyAnatomyDetailComponent);
     component = fixture.componentInstance;
     exercicesService = TestBed.inject(
-      ExercicesService,
-    ) as jasmine.SpyObj<ExercicesService>;
+      ExercicesDbService,
+    ) as jasmine.SpyObj<ExercicesDbService>;
     router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
 
     fixture.detectChanges();

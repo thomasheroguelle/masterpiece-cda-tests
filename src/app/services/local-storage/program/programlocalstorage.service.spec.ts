@@ -1,15 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ProgramService } from './program.service';
-import { Program } from '../../../interfaces/Program';
+import { ProgramLocalStorageService } from './programlocalstorage.service';
+import { Program } from '../../../../interfaces/Program';
 
 describe('ProgramService', () => {
-  let service: ProgramService;
+  let service: ProgramLocalStorageService;
 
   beforeEach(() => {
     localStorage.clear();
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ProgramService);
+    service = TestBed.inject(ProgramLocalStorageService);
   });
 
   it('should be created', () => {

@@ -1,26 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NewProgramComponent } from './new-program.component';
-import { ProgramService } from '../../services/local-storage/program.service';
+import { ProgramLocalStorageService } from '../../services/local-storage/program/programlocalstorage.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { Program } from '../../../interfaces/Program';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
+import { PopupComponent } from '../popup/popup.component';
 
 describe('NewProgramComponent', () => {
   let component: NewProgramComponent;
   let fixture: ComponentFixture<NewProgramComponent>;
-  let programService: jasmine.SpyObj<ProgramService>;
+  let programService: jasmine.SpyObj<ProgramLocalStorageService>;
 
   beforeEach(async () => {
     programService = jasmine.createSpyObj('ProgramService', ['saveProgram']);
     await TestBed.configureTestingModule({
       imports: [HttpClientTestingModule, ReactiveFormsModule],
 
-      declarations: [NewProgramComponent],
+      declarations: [NewProgramComponent, PopupComponent],
       providers: [
         FormBuilder,
-        { provide: ProgramService, useValue: programService },
+        { provide: ProgramLocalStorageService, useValue: programService },
       ],
     }).compileComponents();
 

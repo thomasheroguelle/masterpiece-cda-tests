@@ -2,14 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ExercicesComponent } from './exercices.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { of } from 'rxjs';
 import { Bodyparts } from '../../../interfaces/Exercices';
 
 describe('ExercicesComponent', () => {
   let component: ExercicesComponent;
   let fixture: ComponentFixture<ExercicesComponent>;
-  let mockExercicesService: jasmine.SpyObj<ExercicesService>;
+  let mockExercicesService: jasmine.SpyObj<ExercicesDbService>;
 
   beforeEach(async () => {
     mockExercicesService = jasmine.createSpyObj('ExercicesService', [
@@ -22,7 +22,7 @@ describe('ExercicesComponent', () => {
       declarations: [ExercicesComponent],
 
       providers: [
-        { provide: ExercicesService, useValue: mockExercicesService }, // Injection du mock
+        { provide: ExercicesDbService, useValue: mockExercicesService }, // Injection du mock
       ],
     }).compileComponents();
 

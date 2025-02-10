@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Exercices } from '../../../interfaces/Exercices';
-import { ExercicesService } from '../../services/json-web-server/exercices.service';
+import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class ExerciceDetailComponent {
   exerciceID!: string;
 
   constructor(
-    private readonly exerciceService: ExercicesService,
+    private readonly exerciceService: ExercicesDbService,
     private readonly route: ActivatedRoute,
   ) {}
 

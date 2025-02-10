@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Program } from '../../../interfaces/Program';
+import { Program } from '../../../../interfaces/Program';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProgramService {
+export class ProgramLocalStorageService {
   private readonly storageKey = 'program';
 
   constructor() {}
