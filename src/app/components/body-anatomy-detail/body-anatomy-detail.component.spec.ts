@@ -17,39 +17,45 @@ describe('BodyAnatomyDetailComponent', () => {
       id: '1',
       name: 'Développé couché avec haltères',
       bodypart: [Bodyparts.Poitrine],
-      instructions: "Allongez-vous sur un banc avec un haltère dans chaque main, poussez les haltères vers le haut jusqu'à ce que vos bras soient complètement tendus, puis abaissez les haltères au niveau de la poitrine.",
-      type: "Haltérophilie",
-      difficultyLevel: "Intermédiaire",
-      equipment: "Poids",
-      secondaryMuscles: ["Avant-bras"],
-      gifUrl: "assets/exercices/developpe-couche-halteres-exercice-musculation.jpg",
+      instructions:
+        "Allongez-vous sur un banc avec un haltère dans chaque main, poussez les haltères vers le haut jusqu'à ce que vos bras soient complètement tendus, puis abaissez les haltères au niveau de la poitrine.",
+      type: 'Haltérophilie',
+      difficultyLevel: 'Intermédiaire',
+      equipment: 'Poids',
+      secondaryMuscles: ['Avant-bras'],
+      gifUrl:
+        'assets/exercices/developpe-couche-halteres-exercice-musculation.jpg',
       steps: [
-        "Allongez-vous sur un banc avec un haltère dans chaque main.",
+        'Allongez-vous sur un banc avec un haltère dans chaque main.',
         "Poussez les haltères vers le haut jusqu'à ce que vos bras soient tendus.",
         "Abaissez les haltères jusqu'à la poitrine.",
-        "Relevez les haltères pour revenir à la position de départ."
+        'Relevez les haltères pour revenir à la position de départ.',
       ],
     },
     {
       id: '2',
       name: 'Pompes',
       bodypart: [Bodyparts.Poitrine],
-      instructions: "Commencez en position de planche avec les mains placées légèrement plus larges que la largeur des épaules. Abaissez votre corps jusqu'à ce que votre poitrine touche presque le sol, puis poussez vers le haut.",
-      type: "Poids du corps",
-      difficultyLevel: "Intermédiaire",
-      equipment: "Poids du corps",
-      secondaryMuscles: ["Core", "Bas du dos"],
-      gifUrl: "assets/exercices/pushup.jpg",
+      instructions:
+        "Commencez en position de planche avec les mains placées légèrement plus larges que la largeur des épaules. Abaissez votre corps jusqu'à ce que votre poitrine touche presque le sol, puis poussez vers le haut.",
+      type: 'Poids du corps',
+      difficultyLevel: 'Intermédiaire',
+      equipment: 'Poids du corps',
+      secondaryMuscles: ['Core', 'Bas du dos'],
+      gifUrl: 'assets/exercices/pushup.jpg',
       steps: [
-        "Positionnez vos mains un peu plus larges que vos épaules.",
-        "Abaissez votre corps en fléchissant les coudes.",
-        "Poussez avec vos bras pour revenir à la position de départ."
+        'Positionnez vos mains un peu plus larges que vos épaules.',
+        'Abaissez votre corps en fléchissant les coudes.',
+        'Poussez avec vos bras pour revenir à la position de départ.',
       ],
     },
   ];
 
   beforeEach(async () => {
-    const exercicesServiceMock = jasmine.createSpyObj('ExercicesService', ['getExercices', 'getExerciceById']);
+    const exercicesServiceMock = jasmine.createSpyObj('ExercicesService', [
+      'getExercices',
+      'getExerciceById',
+    ]);
     const routerMock = jasmine.createSpyObj('Router', ['navigate']);
 
     exercicesServiceMock.getExercices.and.returnValue(of(mockExercice));
@@ -70,10 +76,12 @@ describe('BodyAnatomyDetailComponent', () => {
 
     fixture = TestBed.createComponent(BodyAnatomyDetailComponent);
     component = fixture.componentInstance;
-    exercicesService = TestBed.inject(ExercicesService) as jasmine.SpyObj<ExercicesService>;
+    exercicesService = TestBed.inject(
+      ExercicesService,
+    ) as jasmine.SpyObj<ExercicesService>;
     router = TestBed.inject(Router) as jasmine.SpyObj<Router>;
 
-    fixture.detectChanges(); 
+    fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -84,7 +92,9 @@ describe('BodyAnatomyDetailComponent', () => {
     component.loadExercises();
 
     expect(component.filteredExercises.length).toBe(2);
-    expect(component.filteredExercises[0].name).toBe('Développé couché avec haltères');
+    expect(component.filteredExercises[0].name).toBe(
+      'Développé couché avec haltères',
+    );
   });
 
   it('should get exercise detail', () => {

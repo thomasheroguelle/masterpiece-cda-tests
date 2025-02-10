@@ -44,7 +44,7 @@ describe('ExerciceDetailComponent', () => {
       instructions: 'Commencez en position de planche...',
       type: 'Poids du corps',
       difficultyLevel: 'Intermédiaire',
-      bodypart:  [ Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
+      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
       gifUrl: 'assets/exercices/pushup.jpg',
       secondaryMuscles: ['Core', 'Bas du dos'],
       equipment: 'Poids du corps',
