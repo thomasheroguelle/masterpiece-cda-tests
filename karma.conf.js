@@ -26,7 +26,7 @@ module.exports = function (config) {
       reporters: [{ type: "html" }, { type: "text-summary" }, { type: "lcov" }],
     },
     reporters: ["progress", "kjhtml"],
-    browsers: ["ChromeHeadless"], // Use ChromeHeadless instead of Chrome
+    browsers: ["Chrome"], // Use ChromeHeadless instead of Chrome
     restartOnFileChange: true,
     customLaunchers: {
       ChromeHeadless: {

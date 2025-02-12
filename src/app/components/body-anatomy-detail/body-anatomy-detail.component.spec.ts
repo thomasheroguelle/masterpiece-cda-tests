@@ -5,12 +5,20 @@ import { ExercicesDbService } from '../../services/json-web-server/exercises/exe
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
+import { Serie } from '../../../interfaces/Serie';
 
 describe('BodyAnatomyDetailComponent', () => {
   let component: BodyAnatomyDetailComponent;
   let fixture: ComponentFixture<BodyAnatomyDetailComponent>;
   let exercicesService: jasmine.SpyObj<ExercicesDbService>;
   let router: jasmine.SpyObj<Router>;
+
+  const mockSerie: Serie = {
+    id: '1',
+    serieNumber: 1,
+    repetitions: 10,
+    weight: 20,
+  };
 
   const mockExercice: Exercices[] = [
     {
@@ -31,6 +39,7 @@ describe('BodyAnatomyDetailComponent', () => {
         "Abaissez les haltères jusqu'à la poitrine.",
         'Relevez les haltères pour revenir à la position de départ.',
       ],
+      series: [mockSerie],
     },
     {
       id: '2',
@@ -48,6 +57,7 @@ describe('BodyAnatomyDetailComponent', () => {
         'Abaissez votre corps en fléchissant les coudes.',
         'Poussez avec vos bras pour revenir à la position de départ.',
       ],
+      series: [mockSerie],
     },
   ];
 

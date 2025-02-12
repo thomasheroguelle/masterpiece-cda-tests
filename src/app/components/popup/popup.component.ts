@@ -43,6 +43,7 @@ export class PopupComponent {
 
   submit() {
     this.toggleModal();
+    this.selectedOption.reset();
   }
 
   updateButtonState(): void {

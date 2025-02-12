@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Program } from '../../../../interfaces/Program';
+import { Workout } from '../../../interfaces/Workout';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProgramLocalStorageService {
-  private readonly storageKey = 'program';
+export class WorkoutlocalstorageService {
+  private readonly storageKey = 'workout';
 
   constructor() {}
 
-  saveProgram(program: Program) {
-    const programs = this.getPrograms();
-    programs.push(program);
+  saveWorkout(workout: Workout) {
+    const programs = this.getWorkouts();
+    programs.push(workout);
     localStorage.setItem(this.storageKey, JSON.stringify(programs));
   }
 
-  getPrograms(): Program[] {
+  getWorkouts(): Workout[] {
     const data = localStorage.getItem(this.storageKey);
     return data ? JSON.parse(data) : [];
   }

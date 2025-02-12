@@ -1,0 +1,38 @@
+{
+  "programs": [
+    {
+      "id": 1,
+      "title": "Programme 1",
+      "createdAt": "2024-02-10",
+      "workouts": [
+        {
+          "id": 1,
+          "name": "workout 1",
+          "goal": "MUSCLE GAIN",
+          "exercices": [
+            {
+              "id": 1,
+              "exerciceName": "pompes",
+              "difficulty": "Intermediate",
+              "equipment": "bodyweight",
+              "series": [
+                {
+                  "id": 1,
+                  "serieNumber": 1,
+                  "repetitions": 20,
+                  "weight": 0
+                },
+                {
+                  "id": 2,
+                  "serie": 2,
+                  "repetitions": 20,
+                  "weight": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

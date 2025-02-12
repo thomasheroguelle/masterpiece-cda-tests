@@ -4,7 +4,8 @@ import { ExercicesComponent } from './exercices.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { of } from 'rxjs';
-import { Bodyparts } from '../../../interfaces/Exercices';
+import { Bodyparts, Exercices } from '../../../interfaces/Exercices';
+import { Serie } from '../../../interfaces/Serie';
 
 describe('ExercicesComponent', () => {
   let component: ExercicesComponent;
@@ -30,6 +31,33 @@ describe('ExercicesComponent', () => {
     component = fixture.componentInstance;
   });
 
+  const mockSerie: Serie = {
+    id: '1',
+    serieNumber: 1,
+    repetitions: 10,
+    weight: 20,
+  };
+
+  const mockExercice: Exercices[] = [
+    {
+      id: '1',
+      name: 'Pompes',
+      instructions: 'Commencez en position de planche...',
+      type: 'Poids du corps',
+      difficultyLevel: 'Intermédiaire',
+      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
+      gifUrl: 'assets/exercices/pushup.jpg',
+      secondaryMuscles: ['Core', 'Bas du dos'],
+      equipment: 'Poids du corps',
+      steps: [
+        'Positionnez vos mains un peu plus larges que vos épaules.',
+        'Abaissez votre corps en fléchissant les coudes.',
+        'Poussez avec vos bras pour revenir à la position de départ.',
+      ],
+      series: [mockSerie],
+    },
+  ];
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -44,29 +72,10 @@ describe('ExercicesComponent', () => {
       - expect(component.exercices).toEqual(mockExercices); : On vérifie que les exercices récupérés par le service sont bien affectés à la propriété exercices du composant.
   */
   it('should call getExercices and display exercices', () => {
-    const mockExercices = [
-      {
-        id: '1',
-        name: 'Pompes',
-        instructions: 'Commencez en position de planche...',
-        type: 'Poids du corps',
-        difficultyLevel: 'Intermédiaire',
-        bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
-        gifUrl: 'assets/exercices/pushup.jpg',
-        secondaryMuscles: ['Core', 'Bas du dos'],
-        equipment: 'Poids du corps',
-        steps: [
-          'Positionnez vos mains un peu plus larges que vos épaules.',
-          'Abaissez votre corps en fléchissant les coudes.',
-          'Poussez avec vos bras pour revenir à la position de départ.',
-        ],
-      },
-    ];
-
-    mockExercicesService.getExercices.and.returnValue(of(mockExercices));
+    mockExercicesService.getExercices.and.returnValue(of(mockExercice));
 
     fixture.detectChanges(); // lance ngOnInit
 
-    expect(component.exercices).toEqual(mockExercices);
+    expect(component.exercices).toEqual(mockExercice);
   });
 });

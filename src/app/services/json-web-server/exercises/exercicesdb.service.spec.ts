@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http/testing';
 import { environment } from '../../../../environment/environment';
 import { Bodyparts, Exercices } from '../../../../interfaces/Exercices';
+import { Serie } from '../../../../interfaces/Serie';
 
 describe('ExercicesService', () => {
   let service: ExercicesDbService;
@@ -27,6 +28,53 @@ describe('ExercicesService', () => {
     httpMock.verify(); // vérifie qu'il n''y a pas de requete en attente
   });
 
+  const mockSerie: Serie = {
+    id: '1',
+    serieNumber: 1,
+    repetitions: 10,
+    weight: 20,
+  };
+
+  const mockExercises: Exercices[] = [
+    // on mock
+    {
+      id: '1',
+      name: 'Pompes',
+      instructions: 'Commencez en position de planche...',
+      type: 'Poids du corps',
+      difficultyLevel: 'Intermédiaire',
+      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
+
+      gifUrl: 'assets/exercices/pushup.jpg',
+      secondaryMuscles: ['Core', 'Bas du dos'],
+      equipment: 'Poids du corps',
+      steps: [
+        'Positionnez vos mains un peu plus larges que vos épaules.',
+        'Abaissez votre corps en fléchissant les coudes.',
+        'Poussez avec vos bras pour revenir à la position de départ.',
+      ],
+      series: [],
+    },
+  ];
+
+  const mockExercice: Exercices = {
+    id: '1',
+    name: 'Pompes',
+    instructions: 'Commencez en position de planche...',
+    type: 'Poids du corps',
+    difficultyLevel: 'Intermédiaire',
+    bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
+    gifUrl: 'assets/exercices/pushup.jpg',
+    secondaryMuscles: ['Core', 'Bas du dos'],
+    equipment: 'Poids du corps',
+    steps: [
+      'Positionnez vos mains un peu plus larges que vos épaules.',
+      'Abaissez votre corps en fléchissant les coudes.',
+      'Poussez avec vos bras pour revenir à la position de départ.',
+    ],
+    series: [mockSerie],
+  };
+
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
@@ -43,26 +91,6 @@ describe('ExercicesService', () => {
 
   */
   it('should call getExercices and return an array of Exercices', () => {
-    const mockExercises: Exercices[] = [
-      // on mock
-      {
-        id: '1',
-        name: 'Pompes',
-        instructions: 'Commencez en position de planche...',
-        type: 'Poids du corps',
-        difficultyLevel: 'Intermédiaire',
-        bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
-
-        gifUrl: 'assets/exercices/pushup.jpg',
-        secondaryMuscles: ['Core', 'Bas du dos'],
-        equipment: 'Poids du corps',
-        steps: [
-          'Positionnez vos mains un peu plus larges que vos épaules.',
-          'Abaissez votre corps en fléchissant les coudes.',
-          'Poussez avec vos bras pour revenir à la position de départ.',
-        ],
-      },
-    ];
     service.getExercices().subscribe((res) => {
       expect(res).toEqual(mockExercises); // on s'attend à ce que l'appel à getExercices soit egal au mock
     });
@@ -73,22 +101,6 @@ describe('ExercicesService', () => {
   });
 
   it('should call getExerciceById and return the correct exercice', () => {
-    const mockExercice = {
-      id: '1',
-      name: 'Pompes',
-      instructions: 'Commencez en position de planche...',
-      type: 'Poids du corps',
-      difficultyLevel: 'Intermédiaire',
-      bodypart: [Bodyparts.Poitrine, Bodyparts.Triceps, Bodyparts.Épaules],
-      gifUrl: 'assets/exercices/pushup.jpg',
-      secondaryMuscles: ['Core', 'Bas du dos'],
-      equipment: 'Poids du corps',
-      steps: [
-        'Positionnez vos mains un peu plus larges que vos épaules.',
-        'Abaissez votre corps en fléchissant les coudes.',
-        'Poussez avec vos bras pour revenir à la position de départ.',
-      ],
-    };
     service.getExerciceById(mockExercice.id).subscribe((res) => {
       expect(res).toEqual(mockExercice);
     });
