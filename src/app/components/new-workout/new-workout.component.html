@@ -1,0 +1,102 @@
+<section class="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-xl mt-12">
+  <div class="flex items-center w-full mb-6 border-b-2 pb-3">
+    <h3 class="text-2xl font-semibold text-gray-800">
+      Créer un programme d'entraînement
+    </h3>
+  </div>
+
+  <form [formGroup]="workoutForm" (ngSubmit)="onSubmit()">
+    <div class="mb-5">
+      <label
+        for="training-title"
+        class="block text-sm font-medium text-gray-600"
+        >Titre de l'entraînement</label
+      >
+      <input
+        formControlName="workoutName"
+        id="title"
+        type="text"
+        class="mt-2 w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700"
+        placeholder="Titre de l'entraînement"
+        required
+      />
+    </div>
+
+    <div class="mb-5">
+      <label
+        for="training-description"
+        class="block text-sm font-medium text-gray-600"
+        >Description de l'entraînement</label
+      >
+      <textarea
+        formControlName="workoutDescription"
+        id="description"
+        placeholder="Description de l'entraînement"
+        class="mt-2 w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700"
+        required
+      ></textarea>
+    </div>
+
+    <app-popup class="w-full mt-4"></app-popup>
+
+    <ul class="space-y-5 w-full flex flex-col mt-8">
+      <li
+        *ngFor="let exercise of exercices"
+        class="p-4 bg-gray-100 rounded-lg shadow-md hover:bg-gray-200 transition-colors"
+      >
+        <div class="flex justify-between items-center">
+          <span class="font-semibold text-lg text-gray-800">{{
+            exercise.name
+          }}</span>
+          <i
+            class="fa-solid fa-trash cursor-pointer text-red-600 hover:text-red-500 transition-colors duration-300"
+            (click)="deleteExercise(exercise)"
+          ></i>
+        </div>
+
+        <form [formGroup]="serieForm" class="series-form mt-3 flex space-x-3">
+          <input
+            type="number"
+            formControlName="repetitions"
+            placeholder="Répétitions"
+            class="p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700"
+          />
+          <input
+            type="number"
+            formControlName="weight"
+            placeholder="Poids (kg)"
+            class="p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700"
+          />
+          <button
+            type="button"
+            (click)="addSerieToExercise(exercise)"
+            class="px-3 py-2 w-full bg-secondColor text-white rounded hover:bg-secondColorBtnHover transition-colors duration-300"
+          >
+            Ajouter
+          </button>
+        </form>
+
+        <ul class="series-container mt-4 space-y-2 text-sm text-gray-700">
+          <li *ngFor="let serie of exercise.series">
+            <span> {{ serie.repetitions }} reps - {{ serie.weight }} kg </span>
+            <span
+              (click)="deleteSerie(exercise.id, serie.id)"
+              class="px-3 py-2 text-red-600 hover:underline hover:text-red-800 cursor-pointer"
+            >
+              Supprimer
+            </span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <button
+      type="submit"
+      [disabled]="isFormInvalid()"
+      [class.disabled]="isFormInvalid()"
+      class="w-full py-3 mt-6 bg-mainColor text-white focus:outline-none font-semibold rounded-lg transition duration-300 hover:bg-mainColorBtnHover disabled:bg-gray-400"
+    >
+      Créer le programme
+    </button>
+  </form>
+</section>

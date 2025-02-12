@@ -4,7 +4,7 @@
     class="cursor-pointer underline hover:text-gray-700"
     (click)="toggleModal()"
   >
-    Choisir exercices +
+    Choisir exercices <i class="fa-solid fa-plus text-xs"></i>
   </p>
 </div>
 
@@ -53,13 +53,11 @@
               [formControl]="selectedOption"
               multiple
             >
-              <mat-option
-                *ngFor="let exercice of exerciceList; track: exercice"
-                (click)="addExercice()"
-                [value]="exercice"
-              >
-                {{ exercice.name }} [{{ exercice.difficultyLevel }}]
-              </mat-option>
+              @for (exercice of exerciceList; track exercice) {
+                <mat-option (click)="addExercice()" [value]="exercice">
+                  {{ exercice.name }} [{{ exercice.difficultyLevel }}]
+                </mat-option>
+              }
             </mat-select>
           </mat-form-field>
         </form>
@@ -68,8 +66,8 @@
           (click)="submit()"
           [disabled]="btnDisabled"
           [class.disabled]="btnDisabled"
-          type="submit"
-          class="w-full py-3 mt-4 bg-mainColor text-white focus:outline-none font-semibold rounded-lg hover:bg-mainColorBtnHover transition duration-300"
+          type="button"
+          class="w-full py-3 mt-4 bg-mainColor text-white focus:outline-none font-semibold rounded-lg transition duration-300"
         >
           Sélectionner
         </button>

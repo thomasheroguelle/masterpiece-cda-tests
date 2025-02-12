@@ -1,3 +1,5 @@
+import { Serie } from './Serie';
+
 export interface Exercices {
   id: string;
   name: string;
@@ -9,6 +11,7 @@ export interface Exercices {
   secondaryMuscles: string[];
   gifUrl: string;
   steps: string[];
+  series: Serie[];
 }
 
 export enum Bodyparts {

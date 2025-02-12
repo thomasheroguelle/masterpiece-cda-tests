@@ -16,11 +16,12 @@ import { providePrimeNG } from 'primeng/config';
 import { ExerciceDetailComponent } from './components/exercice-detail/exercice-detail.component';
 import { BodyAnatomyComponent } from './components/body-anatomy/body-anatomy.component';
 import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/body-anatomy-detail.component';
-import { NewProgramComponent } from './components/new-program/new-program.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PopupComponent } from './components/popup/popup.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,8 @@ import { MatSelectModule } from '@angular/material/select';
     ExerciceDetailComponent,
     BodyAnatomyComponent,
     BodyAnatomyDetailComponent,
-    NewProgramComponent,
     PopupComponent,
+    NewWorkoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +43,7 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
+    FormsModule,
   ],
   providers: [provideHttpClient(), provideAnimations(), providePrimeNG({})],
   bootstrap: [AppComponent],
