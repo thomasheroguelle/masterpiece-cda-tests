@@ -44,7 +44,7 @@ jobs:
         run: npx prettier --check .
 
       - name: Run tests with coverage
-        run: ng test --watch=false --browsers=ChromeHeadless
+        run: ng test --watch=false --browsers=ChromeHeadless --code-coverage
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
