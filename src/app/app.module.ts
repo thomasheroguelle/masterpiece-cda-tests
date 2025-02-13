@@ -22,6 +22,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
 import { FormsModule } from '@angular/forms';
+import { WorkoutHistoryComponent } from './components/workout-history/workout-history.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from '@angular/forms';
     BodyAnatomyDetailComponent,
     PopupComponent,
     NewWorkoutComponent,
+    WorkoutHistoryComponent,
   ],
   imports: [
     BrowserModule,
