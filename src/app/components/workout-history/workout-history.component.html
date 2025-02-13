@@ -1,0 +1,53 @@
+<section class="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-xl mt-12">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Historique des séances</h1>
+  <ul *ngFor="let workout of workouts" class="space-y-6">
+    <li class="p-6 bg-gray-100 rounded-lg shadow-sm">
+      <h2 class="text-xl font-semibold text-gray-800">{{ workout.name }}</h2>
+      <p class="text-gray-600 text-sm">{{ workout.description }}</p>
+
+      <ul *ngFor="let exercice of workout.exercices" class="mt-4 space-y-3">
+        <li class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm">
+          <h3 class="text-lg font-medium text-gray-700">{{ exercice.name }}</h3>
+          <div class="mt-2 text-gray-600 text-sm space-y-1">
+            <p>
+              <span class="font-semibold">🏋️ Type :</span> {{ exercice.type }}
+            </p>
+            <p>
+              <span class="font-semibold">🦾 Groupe musculaire :</span>
+              {{ exercice.bodypart }}
+            </p>
+            <p>
+              <span class="font-semibold">💪 Muscles secondaires :</span>
+              {{ exercice.secondaryMuscles }}
+            </p>
+            <p>
+              <span class="font-semibold">🔍 Instructions :</span>
+              {{ exercice.instructions }}
+            </p>
+            <p>
+              <span class="font-semibold">📝 Étapes :</span>
+              {{ exercice.steps }}
+            </p>
+
+            <ul *ngFor="let serie of exercice.series" class="mt-4 space-y-2">
+              <li class="p-3 bg-gray-100 rounded-lg shadow-sm">
+                <p>
+                  <span class="font-semibold">📌 Série n° :</span>
+                  {{ serie.serieNumber }}
+                </p>
+                <p>
+                  <span class="font-semibold">🔄 Répétitions :</span>
+                  {{ serie.repetitions }}
+                </p>
+                <p>
+                  <span class="font-semibold">🏋️ Poids :</span>
+                  {{ serie.weight }} kg
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
