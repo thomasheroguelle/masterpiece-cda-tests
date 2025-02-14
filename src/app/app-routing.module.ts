@@ -7,6 +7,7 @@ import { BodyAnatomyComponent } from './components/body-anatomy/body-anatomy.com
 import { BodyAnatomyDetailComponent } from './components/body-anatomy-detail/body-anatomy-detail.component';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
 import { WorkoutHistoryComponent } from './components/workout-history/workout-history.component';
+import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'body-anatomy/:bodypart', component: BodyAnatomyDetailComponent },
   { path: 'new-workout', component: NewWorkoutComponent },
   { path: 'history', component: WorkoutHistoryComponent },
+  { path: 'update/:id', component: UpdateWorkoutComponent },
 ];
 
 @NgModule({
