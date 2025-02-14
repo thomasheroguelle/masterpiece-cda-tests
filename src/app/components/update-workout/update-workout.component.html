@@ -1,0 +1,125 @@
+<form *ngIf="workout" (ngSubmit)="updateWorkout()">
+  <section
+    class="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 mt-12"
+  >
+    <div class="flex items-center w-full mb-6 border-b pb-3">
+      <h3 class="text-2xl font-semibold text-gray-800">
+        Modifier l'entraînement
+      </h3>
+    </div>
+
+    <div class="mb-5">
+      <label class="block text-sm font-medium text-gray-600" for="name"
+        >Nom de l'entraînement</label
+      >
+      <input
+        class="mt-2 w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700 outline-none transition-all duration-300"
+        type="text"
+        id="name"
+        [(ngModel)]="workout.name"
+        name="name"
+        required
+        placeholder="Nom de l'entraînement"
+      />
+
+      <label
+        class="block text-sm font-medium text-gray-600 mt-4"
+        for="description"
+        >Description</label
+      >
+      <textarea
+        class="mt-2 w-full p-4 border rounded-lg focus:ring-2 focus:ring-blue-500 bg-gray-50 text-gray-700 outline-none transition-all duration-300"
+        id="description"
+        [(ngModel)]="workout.description"
+        name="description"
+        placeholder="Description de l'entraînement"
+      ></textarea>
+
+      <div
+        class="mt-6 space-y-6"
+        *ngFor="let exercice of workout.exercices; let i = index"
+      >
+        <div class="p-4 border rounded-lg bg-gray-50">
+          <label class="block text-sm font-medium text-gray-600"
+            >Exercice {{ i + 1 }}</label
+          >
+          <input
+            disabled
+            class="mt-2 w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 bg-white text-gray-700 outline-none transition-all duration-300"
+            type="text"
+            [(ngModel)]="exercice.name"
+            name="exerciceName{{ i }}"
+            placeholder="Nom de l'exercice"
+          />
+
+          <div
+            class="mt-4 space-y-4"
+            *ngFor="let serie of exercice.series; let j = index"
+          >
+            <div class="p-3 border rounded-lg bg-white">
+              <label class="block text-sm font-medium text-gray-600"
+                >Série {{ j + 1 }}</label
+              >
+
+              <label class="block text-sm font-medium text-gray-600 mt-2"
+                >Répétitions</label
+              >
+              <input
+                class="p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 bg-white text-gray-700 outline-none transition-all duration-300"
+                type="number"
+                [(ngModel)]="serie.repetitions"
+                name="repetitions{{ i }}-{{ j }}"
+                placeholder="Répétitions"
+              />
+
+              <label class="block text-sm font-medium text-gray-600 mt-2"
+                >Charge (kg)</label
+              >
+              <input
+                class="p-3 w-full border rounded-lg focus:ring-2 focus:ring-blue-500 bg-white text-gray-700 outline-none transition-all duration-300"
+                type="number"
+                [(ngModel)]="serie.weight"
+                name="weight{{ i }}-{{ j }}"
+                placeholder="Poids (kg)"
+              />
+            </div>
+          </div>
+
+          <button
+            type="button"
+            (click)="addSerie(exercice)"
+            class="add-serie mt-3 w-full py-2 text-white font-medium rounded-lgtransition-colors duration-300"
+          >
+            Ajouter une série
+          </button>
+        </div>
+      </div>
+
+      <app-popup (exercisesAdded)="addExercisesToWorkout($event)"></app-popup>
+    </div>
+
+    <div class="mt-6">
+      <button
+        type="submit"
+        [disabled]="!workout.name || !workout.description"
+        class="w-full py-3 bg-mainColor text-white font-medium rounded-lg transition duration-300 hover:bg-mainColorBtnHover disabled:bg-gray-400"
+      >
+        Mettre à jour
+      </button>
+    </div>
+  </section>
+</form>
+
+<div
+  *ngIf="!workout"
+  class="max-w-3xl mx-auto p-8 bg-white rounded-xl shadow-lg mt-12 text-center"
+>
+  <p class="text-gray-700">Pas d'entraînement pour le moment.</p>
+
+  <button
+    routerLink="/new-workout"
+    class="w-full py-3 mt-6 bg-blue-600 text-white font-medium rounded-lg transition duration-300 hover:bg-blue-700"
+  >
+    Créer une séance
+  </button>
+</div>

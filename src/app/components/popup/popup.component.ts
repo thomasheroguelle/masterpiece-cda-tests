@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Exercices } from '../../../interfaces/Exercices';
 import { ExercicesDbService } from '../../services/json-web-server/exercises/exercicesdb.service';
 import { ExercisesLocalStorageService } from '../../services/local-storage/exercises/exerciseslocalstorage.service';
@@ -13,6 +13,8 @@ export class PopupComponent {
   showModal = false;
   selectedOption = new FormControl<Exercices[]>([]);
   btnDisabled = true;
+
+  @Output() exercisesAdded = new EventEmitter<Exercices[]>();
 
   constructor(
     private exercisesDb: ExercicesDbService,
@@ -42,8 +44,12 @@ export class PopupComponent {
   }
 
   submit() {
-    this.toggleModal();
-    this.selectedOption.reset();
+    const choosenEx = this.selectedOption.value;
+    if (choosenEx) {
+      this.exercisesAdded.emit(choosenEx);
+      this.toggleModal();
+      this.selectedOption.reset();
+    }
   }
 
   updateButtonState(): void {

@@ -1,0 +1,23 @@
+<button
+  mat-icon-button
+  [matMenuTriggerFor]="menu"
+  aria-label="Example icon-button with a menu"
+  class="p-2 bg-gray-100 rounded-full hover:bg-gray-200 focus:outline-none transition duration-200 ease-in-out"
+>
+  <mat-icon class="text-gray-700">more_vert</mat-icon>
+</button>
+
+<mat-menu
+  #menu="matMenu"
+  class="bg-white shadow-lg rounded-lg min-w-[200px] p-2"
+>
+  <button
+    (click)="workoutRouter()"
+    mat-menu-item
+    class="text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-100 transition duration-200 ease-in-out"
+  >
+    <mat-icon class="mr-2 text-gray-600">edit</mat-icon>
+
+    <span>Modifier la séance</span>
+  </button>
+</mat-menu>

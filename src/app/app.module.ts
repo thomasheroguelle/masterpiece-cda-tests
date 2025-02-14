@@ -23,6 +23,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { NewWorkoutComponent } from './components/new-workout/new-workout.component';
 import { FormsModule } from '@angular/forms';
 import { WorkoutHistoryComponent } from './components/workout-history/workout-history.component';
+import { WorkoutControlMenuComponent } from './components/workout-control-menu/workout-control-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +42,8 @@ import { WorkoutHistoryComponent } from './components/workout-history/workout-hi
     PopupComponent,
     NewWorkoutComponent,
     WorkoutHistoryComponent,
+    WorkoutControlMenuComponent,
+    UpdateWorkoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +54,16 @@ import { WorkoutHistoryComponent } from './components/workout-history/workout-hi
     MatFormFieldModule,
     MatSelectModule,
     FormsModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatIconModule,
   ],
-  providers: [provideHttpClient(), provideAnimations(), providePrimeNG({})],
+  providers: [
+    provideHttpClient(),
+    provideAnimations(),
+    providePrimeNG({}),
+    provideAnimationsAsync(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
