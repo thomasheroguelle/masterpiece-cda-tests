@@ -15,6 +15,10 @@ export class WorkoutHistoryComponent {
   ) {}
 
   ngOnInit() {
+    this.handleWorkoutDeleted();
+  }
+
+  handleWorkoutDeleted() {
     this.workouts = this.workoutLocalStorageService.getWorkouts();
   }
 }

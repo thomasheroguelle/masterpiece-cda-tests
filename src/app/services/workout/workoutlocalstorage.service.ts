@@ -71,4 +71,11 @@ export class WorkoutlocalstorageService {
       this.updateWorkout(workout);
     }
   }
+
+  deleteWorkout(workoutId: string) {
+    const workouts = this.getWorkouts().filter(
+      (workout) => workout.id !== workoutId,
+    );
+    localStorage.setItem(this.storageKey, JSON.stringify(workouts));
+  }
 }
