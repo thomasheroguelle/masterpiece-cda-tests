@@ -177,5 +177,15 @@
         "Répétez."
       ]
     }
+  ],
+  "programs": [
+    {
+      "name": "Full Body Blast",
+      "description": "Muscle Gain"
+    },
+    {
+      "name": "Split Workout",
+      "description": "Muscle Gain"
+    }
   ]
 }

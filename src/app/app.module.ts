@@ -29,6 +29,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
+import { ProgramsComponent } from './components/programs/programs.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { UpdateWorkoutComponent } from './components/update-workout/update-worko
     WorkoutHistoryComponent,
     WorkoutControlMenuComponent,
     UpdateWorkoutComponent,
+    ProgramsComponent,
   ],
   imports: [
     BrowserModule,
