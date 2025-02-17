@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { WorkoutlocalstorageService } from '../../services/workout/workoutlocalstorage.service';
 import { Workout } from '../../../interfaces/Workout';
 import { Exercices } from '../../../interfaces/Exercices';
@@ -15,7 +15,6 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
 export class UpdateWorkoutComponent implements OnInit {
   workoutId: string = '';
   workout: Workout | null = null;
-
   constructor(
     private workoutLocalStorageService: WorkoutlocalstorageService,
     private route: ActivatedRoute,
@@ -29,6 +28,9 @@ export class UpdateWorkoutComponent implements OnInit {
         this.workoutId,
       );
     }
+    this.workoutLocalStorageService.workouts$.subscribe((workouts) => {
+      this.workout = workouts.find((w) => w.id === this.workoutId) ?? null;
+    });
   }
 
   updateWorkout() {
@@ -65,5 +67,20 @@ export class UpdateWorkoutComponent implements OnInit {
     };
     exercice.series.push(newSerie);
     this.updateWorkout();
+  }
+
+  deleteSerie(serie: Serie, exercice: Exercices) {
+    if (serie) {
+      this.workoutLocalStorageService.deleteSerie(
+        this.workoutId,
+        exercice.id,
+        serie.id,
+      );
+      console.group();
+      console.log('Suppression de la série :', serie);
+      console.log('Exercice associé :', exercice);
+      console.log('Workout ID :', this.workoutId);
+      this.snackBar.showInfo('Série supprimée ');
+    }
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Workout } from '../../../interfaces/Workout';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,6 +9,9 @@ export class WorkoutlocalstorageService {
   private readonly storageKey = 'workout';
 
   constructor() {}
+
+  private workoutSubject = new BehaviorSubject<Workout[]>(this.getWorkouts());
+  workouts$ = this.workoutSubject.asObservable();
 
   saveWorkout(workout: Workout) {
     const programs = this.getWorkouts();
@@ -29,6 +33,7 @@ export class WorkoutlocalstorageService {
       if (index !== -1) {
         workoutList[index] = updatedWorkout;
         localStorage.setItem(this.storageKey, JSON.stringify(workoutList));
+        this.workoutSubject.next(workoutList);
       }
     }
   }
@@ -49,6 +54,21 @@ export class WorkoutlocalstorageService {
       return foundWorkout || null;
     } else {
       return null;
+    }
+  }
+
+  deleteSerie(workoutId: string, exerciceId: string, serieId: string) {
+    const workout = this.getWorkoutById(workoutId);
+
+    const exercice = workout?.exercices.find((ex) => ex.id === exerciceId);
+    if (!exercice) {
+      console.error('Exercice introuvable');
+      return;
+    }
+    exercice.series = exercice.series.filter((s) => s.id !== serieId);
+
+    if (workout) {
+      this.updateWorkout(workout);
     }
   }
 }

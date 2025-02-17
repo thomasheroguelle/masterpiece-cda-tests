@@ -42,16 +42,25 @@
             <h4 class="text-gray-700 font-semibold text-sm">
               📊 Détails des séries :
             </h4>
-            <div
-              *ngFor="let serie of exercice.series"
-              class="flex justify-between p-3 bg-gray-100 rounded-lg shadow-sm"
-            >
-              <p>
-                <span class="font-semibold">#{{ serie.serieNumber }}</span>
-              </p>
-              <p>🔄 {{ serie.repetitions }} reps</p>
-              <p>🏋️ {{ serie.weight }} kg</p>
+
+            <div *ngIf="exercice.series.length > 0; else noSeries">
+              <div
+                *ngFor="let serie of exercice.series"
+                class="flex justify-between p-3 bg-gray-100 rounded-lg shadow-sm"
+              >
+                <p>
+                  <span class="font-semibold">#{{ serie.serieNumber }}</span>
+                </p>
+                <p>🔄 {{ serie.repetitions }} reps</p>
+                <p>🏋️ {{ serie.weight }} kg</p>
+              </div>
             </div>
+
+            <ng-template #noSeries>
+              <p class="text-red-600 text-lg font-semibold text-center mt-2">
+                Pas de série pour le moment
+              </p>
+            </ng-template>
           </div>
         </div>
       </div>

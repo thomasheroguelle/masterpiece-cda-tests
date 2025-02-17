@@ -51,11 +51,18 @@
             name="exerciceName{{ i }}"
             placeholder="Nom de l'exercice"
           />
-
           <div
             class="mt-4 space-y-4"
             *ngFor="let serie of exercice.series; let j = index"
           >
+            <span> {{ serie.repetitions }} reps - {{ serie.weight }} kg </span>
+            <span
+              (click)="deleteSerie(serie, exercice)"
+              class="px-3 py-2 text-red-600 hover:underline hover:text-red-800 cursor-pointer"
+            >
+              Supprimer
+            </span>
+
             <div class="p-3 border rounded-lg bg-white">
               <label class="block text-sm font-medium text-gray-600"
                 >Série {{ j + 1 }}</label
