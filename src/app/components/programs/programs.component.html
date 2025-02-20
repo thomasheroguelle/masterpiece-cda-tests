@@ -6,6 +6,7 @@
   <div class="p-6 space-y-6">
     <div
       *ngFor="let program of programs"
+      (click)="goToDetail(program.id)"
       class="cursor-pointer program-item bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300 ease-in-out"
     >
       <h2 class="program-name text-2xl font-semibold text-gray-900 mb-3">
