@@ -13,4 +13,8 @@ export class ProgramsService {
   getPrograms(): Observable<Program[]> {
     return this.http.get<Program[]>(environment.PROGRAMS);
   }
+
+  getProgramById(id: string): Observable<Program> {
+    return this.http.get<Program>(`${environment.PROGRAMS}/${id}`);
+  }
 }

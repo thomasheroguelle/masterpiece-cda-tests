@@ -176,16 +176,158 @@
         "Redescendez lentement sans que vos pieds touchent le sol.",
         "Répétez."
       ]
+    },
+    {
+      "name": "Développé couché",
+      "instructions": "Allongez-vous sur un banc, saisissez la barre avec une prise légèrement supérieure à la largeur des épaules, descendez la barre jusqu'à votre poitrine, puis poussez-la vers le haut jusqu'à extension complète des bras.",
+      "steps": [
+        "Allongez-vous sur un banc et saisissez la barre.",
+        "Descendez lentement la barre jusqu'à toucher votre poitrine.",
+        "Poussez la barre vers le haut jusqu'à extension complète des bras.",
+        "Contrôlez la descente et répétez."
+      ],
+      "type": "Musculation",
+      "difficultyLevel": "Intermédiaire",
+      "bodypart": ["Poitrine", "Triceps"],
+      "gifUrl": "assets/exercices/developpe-couche.jpg",
+      "secondaryMuscles": ["Épaules", "Triceps"],
+      "equipment": ["Barre", "Haltères"],
+      "series": ["4x10"]
+    },
+    {
+      "name": "Rowing barre",
+      "instructions": "Penchez-vous légèrement en avant, saisissez la barre avec une prise pronation, tirez la barre vers votre abdomen tout en contractant votre dos, puis revenez lentement à la position initiale.",
+      "steps": [
+        "Penchez-vous légèrement en avant avec le dos droit.",
+        "Saisissez la barre avec une prise pronation.",
+        "Tirez la barre vers votre abdomen en contractant votre dos.",
+        "Revenez lentement à la position initiale."
+      ],
+      "type": "Musculation",
+      "difficultyLevel": "Intermédiaire",
+      "bodypart": ["Dos"],
+      "gifUrl": "assets/exercices/rowing-barre.jpg",
+      "secondaryMuscles": ["Biceps", "Épaules"],
+      "equipment": ["Barre", "Haltères"],
+      "series": ["4x8"]
     }
   ],
   "programs": [
     {
       "name": "Full Body Blast",
-      "description": "Muscle Gain"
-    },
-    {
-      "name": "Split Workout",
-      "description": "Muscle Gain"
+      "description": "Muscle Gain",
+      "trainingDays": [
+        {
+          "day": "Monday",
+          "exercices": [
+            {
+              "name": "Squats",
+              "instructions": "Placez vos pieds à la largeur des épaules, abaissez votre corps en fléchissant les genoux et les hanches jusqu'à ce que vos cuisses soient parallèles au sol, puis relevez-vous.",
+              "steps": [
+                "Placez vos pieds à la largeur des épaules.",
+                "Fléchissez les genoux et les hanches.",
+                "Descendez jusqu'à ce que vos cuisses soient parallèles au sol.",
+                "Relevez-vous en poussant sur vos talons."
+              ],
+              "type": "Poids du corps",
+              "difficultyLevel": "Débutant",
+              "bodypart": ["Jambes", "Fessiers"],
+              "gifUrl": "assets/exercices/squats.jpg",
+              "secondaryMuscles": ["Core", "Bas du dos"],
+              "equipment": ["Poids du corps", "haltères", "Barre"],
+              "series": ["reoe"]
+            },
+            {
+              "name": "Tractions",
+              "instructions": "Saisissez une barre de traction avec les paumes tournées vers l'extérieur. Tirez votre corps jusqu'à ce que votre menton soit au-dessus de la barre, puis abaissez-vous lentement.",
+              "steps": [
+                "Saisissez une barre de traction avec les paumes vers l'extérieur.",
+                "Tirez votre corps vers le haut jusqu'à ce que votre menton dépasse la barre.",
+                "Abaissez-vous lentement et contrôlez le mouvement."
+              ],
+              "type": "Poids du corps",
+              "difficultyLevel": "Avancé",
+              "bodypart": ["Dos", "Biceps"],
+              "gifUrl": "assets/exercices/pullups.jpg",
+              "secondaryMuscles": ["Épaules", "Avant-bras"],
+              "equipment": "Poids du corps"
+            },
+            {
+              "name": "Burpees",
+              "instructions": "Commencez en position debout, puis descendez en position de squat et envoyez vos pieds en arrière pour vous retrouver en position de planche. Faites une pompe, puis sautez pour revenir sur vos pieds et sautez en l'air.",
+              "steps": [
+                "Commencez en position debout.",
+                "Descendez en position de squat et envoyez vos pieds en arrière.",
+                "Faites une pompe.",
+                "Revenez en position de squat, puis sautez en l'air."
+              ],
+              "type": "Cardio",
+              "difficultyLevel": "Intermédiaire",
+              "bodypart": ["Corps entier"],
+              "gifUrl": "assets/exercices/burpees.jpg",
+              "secondaryMuscles": ["Core", "Épaules"],
+              "equipment": "Poids du corps"
+            }
+          ]
+        },
+        {
+          "day": "Wednesday",
+          "exercices": [
+            {
+              "name": "Développé couché",
+              "instructions": "Allongez-vous sur un banc, saisissez la barre avec une prise légèrement supérieure à la largeur des épaules, descendez la barre jusqu'à votre poitrine, puis poussez-la vers le haut jusqu'à extension complète des bras.",
+              "steps": [
+                "Allongez-vous sur un banc et saisissez la barre.",
+                "Descendez lentement la barre jusqu'à toucher votre poitrine.",
+                "Poussez la barre vers le haut jusqu'à extension complète des bras.",
+                "Contrôlez la descente et répétez."
+              ],
+              "type": "Musculation",
+              "difficultyLevel": "Intermédiaire",
+              "bodypart": ["Poitrine", "Triceps"],
+              "gifUrl": "assets/exercices/developpe-couche.jpg",
+              "secondaryMuscles": ["Épaules", "Triceps"],
+              "equipment": ["Barre", "Haltères"],
+              "series": ["4x10"]
+            },
+            {
+              "name": "Rowing barre",
+              "instructions": "Penchez-vous légèrement en avant, saisissez la barre avec une prise pronation, tirez la barre vers votre abdomen tout en contractant votre dos, puis revenez lentement à la position initiale.",
+              "steps": [
+                "Penchez-vous légèrement en avant avec le dos droit.",
+                "Saisissez la barre avec une prise pronation.",
+                "Tirez la barre vers votre abdomen en contractant votre dos.",
+                "Revenez lentement à la position initiale."
+              ],
+              "type": "Musculation",
+              "difficultyLevel": "Intermédiaire",
+              "bodypart": ["Dos"],
+              "gifUrl": "assets/exercices/rowing-barre.jpg",
+              "secondaryMuscles": ["Biceps", "Épaules"],
+              "equipment": ["Barre", "Haltères"],
+              "series": ["4x8"]
+            },
+            {
+              "name": "Fentes",
+              "instructions": "Faites un grand pas en avant, fléchissez le genou avant jusqu'à ce qu'il forme un angle de 90 degrés, puis poussez pour revenir à la position initiale.",
+              "steps": [
+                "Faites un grand pas en avant.",
+                "Fléchissez le genou avant jusqu'à ce qu'il forme un angle de 90 degrés.",
+                "Gardez le dos droit et poussez pour revenir à la position initiale.",
+                "Répétez avec l'autre jambe."
+              ],
+              "type": "Poids du corps",
+              "difficultyLevel": "Débutant",
+              "bodypart": ["Jambes", "Fessiers"],
+              "gifUrl": "assets/exercices/fentes.jpg",
+              "secondaryMuscles": ["Core"],
+              "equipment": ["Poids du corps", "Haltères"],
+              "series": ["3x12"]
+            }
+          ]
+        }
+      ],
+      "trainingDaysCount": 2
     }
   ]
 }
