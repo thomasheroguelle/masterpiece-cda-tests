@@ -30,7 +30,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
 import { ProgramsComponent } from './components/programs/programs.component';
-import { ProgramDetailComponent } from './components/program-detal/program-detail.component';
+import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
 
 @NgModule({
   declarations: [

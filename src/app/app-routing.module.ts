@@ -9,7 +9,7 @@ import { NewWorkoutComponent } from './components/new-workout/new-workout.compon
 import { WorkoutHistoryComponent } from './components/workout-history/workout-history.component';
 import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
 import { ProgramsComponent } from './components/programs/programs.component';
-import { ProgramDetailComponent } from './components/program-detal/program-detail.component';
+import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
