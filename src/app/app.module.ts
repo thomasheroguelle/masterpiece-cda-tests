@@ -31,6 +31,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ProgramDetailComponent } from './components/program-detail/program-deta
     UpdateWorkoutComponent,
     ProgramsComponent,
     ProgramDetailComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
