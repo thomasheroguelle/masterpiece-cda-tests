@@ -1,0 +1,184 @@
+<header class="bg-gray-100 border-b border-gray-200">
+  <div class="px-4 mx-auto sm:px-6 lg:px-8">
+    <nav
+      class="primary-navigation relative flex items-center justify-between h-16 lg:h-20"
+    >
+      <div class="flex items-center justify-between w-full">
+        <a routerLink="" title="" class="flex">
+          <img width="124" src="assets/logo/logo-black.png" alt="Logo" />
+        </a>
+
+        <div class="hidden lg:flex flex-1 justify-center space-x-10">
+          <ul class="flex space-x-6">
+            <li><a routerLink="" class="text-base transition">Accueil</a></li>
+            <li class="relative group cursor-pointer">
+              Exercices &dtrif;
+              <ul class="absolute hidden bg-white shadow-md group-hover:block">
+                <li>
+                  <a
+                    routerLink="exercices"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Tous les exercices</a
+                  >
+                </li>
+                <li>
+                  <a
+                    routerLink="body-anatomy"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Anatomie musculaire</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="relative group cursor-pointer">
+              Séances &dtrif;
+              <ul class="absolute hidden bg-white shadow-md group-hover:block">
+                <li>
+                  <a
+                    routerLink="new-workout"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Créer une séance</a
+                  >
+                </li>
+                <li>
+                  <a
+                    routerLink="history"
+                    class="block px-4 py-2 hover:bg-gray-100"
+                    >Historique des entraînements</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a routerLink="programs" class="text-base transition"
+                >Programmes</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <button
+          (click)="toggle()"
+          type="button"
+          class="inline-flex p-2 ml-5 text-black transition duration-200 rounded-md lg:hidden hover:bg-gray-200 focus:bg-gray-200"
+        >
+          <svg
+            class="w-6 h-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 18L20 18"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M4 12L20 12"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M4 6L20 6"
+              stroke="#000000"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <nav *ngIf="isClicked" class="py-4 bg-white lg:hidden shadow-md">
+    <div class="px-4 mx-auto sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <p
+          class="text-sm font-semibold tracking-widest text-gray-400 uppercase"
+        >
+          Menu
+        </p>
+        <button
+          (click)="toggle()"
+          type="button"
+          class="inline-flex p-2 text-black transition duration-200 rounded-md hover:bg-gray-200 focus:bg-gray-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="mt-6">
+        <div class="space-y-4">
+          <details class="group">
+            <summary
+              class="cursor-pointer text-base font-medium text-black transition duration-200 hover:text-mainColorBtnHover"
+            >
+              Exercices
+            </summary>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a
+                  routerLink="exercices"
+                  class="block py-2 text-sm text-gray-700 hover:text-mainColorBtnHover"
+                  >Tous les exercices</a
+                >
+              </li>
+              <li>
+                <a
+                  routerLink="body-anatomy"
+                  class="block py-2 text-sm text-gray-700 hover:text-mainColorBtnHover"
+                  >Anatomie musculaire</a
+                >
+              </li>
+            </ul>
+          </details>
+
+          <details class="group">
+            <summary
+              class="cursor-pointer text-base font-medium text-black transition duration-200 hover:text-mainColorBtnHover"
+            >
+              Séances
+            </summary>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a
+                  routerLink="new-workout"
+                  class="block py-2 text-sm text-gray-700 hover:text-mainColorBtnHover"
+                  >Créer une séance</a
+                >
+              </li>
+              <li>
+                <a
+                  routerLink="history"
+                  class="block py-2 text-sm text-gray-700 hover:text-mainColorBtnHover"
+                  >Historique des entraînements</a
+                >
+              </li>
+            </ul>
+          </details>
+
+          <a
+            routerLink="programs"
+            class="block py-2 text-base font-medium text-black transition duration-200 hover:text-mainColorBtnHover"
+            >Programmes</a
+          >
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
