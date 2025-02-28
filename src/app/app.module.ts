@@ -32,6 +32,7 @@ import { UpdateWorkoutComponent } from './components/update-workout/update-worko
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { HeaderComponent } from './components/header/header.component';
     ProgramsComponent,
     ProgramDetailComponent,
     HeaderComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,109 @@
+<div class="min-h-screen flex flex-col items-center justify-center">
+  <div
+    class="grid md:grid-cols-2 items-center gap-4 max-md:gap-8 max-w-6xl max-md:max-w-lg w-full p-4 shadow-lg rounded-md"
+  >
+    <div class="md:max-w-md w-full px-4 py-4">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-12">
+          <h3 class="text-gray-800 text-3xl font-extrabold">S'inscrire</h3>
+          <p class="text-sm mt-4 text-gray-800">
+            Vous avez déjà un compte ?
+            <a
+              routerLink="/login"
+              class="text-mainColor cursor-pointer font-semibold hover:underline ml-1 whitespace-nowrap"
+              >Connectez-vous ici</a
+            >
+          </p>
+        </div>
+
+        <div>
+          <label class="text-gray-800 text-sm mb-2 block"
+            >Nom d'utilisateur</label
+          >
+          <input
+            type="text"
+            formControlName="username"
+            class="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-gray-500 focus:ring-blue-500 px-2 py-3 outline-none"
+            placeholder="Entrez votre nom d'utilisateur"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['username'].invalid &&
+              registerForm.controls['username'].touched
+            "
+            class="text-red-500 text-sm"
+          >
+            <span *ngIf="registerForm.controls['username'].errors?.['required']"
+              >Le nom d'utilisateur est requis.</span
+            >
+            <span
+              *ngIf="registerForm.controls['username'].errors?.['minlength']"
+              >Minimum 3 caractères.</span
+            >
+          </div>
+
+          <label class="text-gray-800 text-sm mt-4 block">Email</label>
+          <input
+            type="email"
+            formControlName="email"
+            class="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-gray-500 focus:ring-blue-500 px-2 py-3 outline-none"
+            placeholder="Entrez votre email"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['email'].invalid &&
+              registerForm.controls['email'].touched
+            "
+            class="text-red-500 text-sm"
+          >
+            <span *ngIf="registerForm.controls['email'].errors?.['required']"
+              >L'email est requis.</span
+            >
+            <span *ngIf="registerForm.controls['email'].errors?.['email']"
+              >Format invalide.</span
+            >
+          </div>
+
+          <label class="text-gray-800 text-sm mt-4 block">Mot de passe</label>
+          <input
+            type="password"
+            formControlName="password"
+            class="w-full text-gray-800 text-sm border-b border-gray-300 focus:border-gray-500 focus:ring-blue-500 px-2 py-3 outline-none"
+            placeholder="Entrez votre mot de passe"
+          />
+          <div
+            *ngIf="
+              registerForm.controls['password'].invalid &&
+              registerForm.controls['password'].touched
+            "
+            class="text-red-500 text-sm"
+          >
+            <span *ngIf="registerForm.controls['password'].errors?.['required']"
+              >Le mot de passe est requis.</span
+            >
+            <span
+              *ngIf="registerForm.controls['password'].errors?.['minlength']"
+              >Minimum 6 caractères.</span
+            >
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <button
+            type="submit"
+            [disabled]="registerForm.invalid"
+            class="p-2 w-full py-2.5 px-4 text-sm tracking-wide rounded-md text-white bg-mainColor hover:bg-mainColorBtnHover focus:outline-none disabled:bg-gray-400 disabled:cursor-not-allowed"
+          >
+            S'inscrire
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <img
+      src="assets/register/main-img.png"
+      class="w-full h-full object-contain"
+      alt="Image d'inscription"
+    />
+  </div>
+</div>

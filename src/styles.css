@@ -59,23 +59,25 @@ mat-form-field {
 }
 
 /* Snackbars */
-.snackbar-success {
-  background-color: #4caf50 !important;
-  color: white !important;
+::ng-deep .snackbar-success {
+  background-color: #4caf50;
 }
-
-.snackbar-error {
-  background-color: #f44336 !important;
-  color: white !important;
-}
-
-.snackbar-info {
-  background-color: rgba(255, 255, 255);
-  color: #000 !important;
-
-  box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+.mat-mdc-snack-bar-container {
+  &.snackbar-success {
+    --mdc-snackbar-container-color: #4caf50;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+  &.snackbar-error {
+    --mdc-snackbar-container-color: #f44336;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
+  &.snackbar-info {
+    --mdc-snackbar-container-color: rgba(255, 255, 255);
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+  }
 }
 
 .snackbar-error,
