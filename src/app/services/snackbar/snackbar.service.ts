@@ -14,7 +14,7 @@ export class SnackbarService {
 
   constructor(private readonly snackBar: MatSnackBar) {}
 
-  showSuccess(message: string, duration: number = 3000) {
+  showSuccess(message: string, duration: number = 30000000000) {
     this.snackBar.open(message, '', {
       duration,
       panelClass: ['snackbar-success'],

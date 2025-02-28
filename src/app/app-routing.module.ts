@@ -10,6 +10,7 @@ import { WorkoutHistoryComponent } from './components/workout-history/workout-hi
 import { UpdateWorkoutComponent } from './components/update-workout/update-workout.component';
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'update/:id', component: UpdateWorkoutComponent },
   { path: 'programs', component: ProgramsComponent },
   { path: 'program/:id', component: ProgramDetailComponent },
+  { path: 'register', component: RegisterComponent },
 ];
 
 @NgModule({
