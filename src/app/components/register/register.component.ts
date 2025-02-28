@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
-import { Router } from '@angular/router';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
 
 @Component({
@@ -19,7 +18,6 @@ export class RegisterComponent {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router,
     private snackBar: SnackbarService,
   ) {
     this.registerForm = this.fb.group({
