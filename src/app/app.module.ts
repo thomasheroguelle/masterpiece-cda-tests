@@ -33,6 +33,8 @@ import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { httpInterceptorProviders } from '../helpers/http.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { RegisterComponent } from './components/register/register.component';
     ProgramDetailComponent,
     HeaderComponent,
     RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,6 +74,7 @@ import { RegisterComponent } from './components/register/register.component';
     provideAnimations(),
     providePrimeNG({}),
     provideAnimationsAsync(),
+    httpInterceptorProviders,
   ],
   bootstrap: [AppComponent],
 })

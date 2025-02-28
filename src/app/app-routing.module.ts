@@ -11,6 +11,7 @@ import { UpdateWorkoutComponent } from './components/update-workout/update-worko
 import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'programs', component: ProgramsComponent },
   { path: 'program/:id', component: ProgramDetailComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
