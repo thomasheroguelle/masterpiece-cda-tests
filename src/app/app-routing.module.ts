@@ -12,6 +12,7 @@ import { ProgramsComponent } from './components/programs/programs.component';
 import { ProgramDetailComponent } from './components/program-detail/program-detail.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'program/:id', component: ProgramDetailComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'profile', component: UserProfileComponent },
 ];
 
 @NgModule({
