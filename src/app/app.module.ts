@@ -35,6 +35,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { httpInterceptorProviders } from '../helpers/http.interceptor';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { httpInterceptorProviders } from '../helpers/http.interceptor';
     HeaderComponent,
     RegisterComponent,
     LoginComponent,
+    UserProfileComponent,
   ],
   imports: [
     BrowserModule,
