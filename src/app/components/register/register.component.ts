@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -19,6 +20,7 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private snackBar: SnackbarService,
+    private route: Router,
   ) {
     this.registerForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
@@ -33,7 +35,12 @@ export class RegisterComponent {
         console.log(data);
         this.isSuccessful = true;
         this.isSignupFailed = false;
-        this.snackBar.showSuccess((this.errorMessage = data.message));
+        this.snackBar.showSuccess(
+          (this.errorMessage =
+            data.message +
+            " , redirection vers la connexion de l'utilisateur..."),
+        );
+        this.route.navigate(['/login']);
       },
       error: (err) => {
         this.snackBar.showError((this.errorMessage = err.error.message));

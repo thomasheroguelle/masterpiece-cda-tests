@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StorageService } from '../../services/storage-service/storage.service';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +22,7 @@ export class LoginComponent {
     private authService: AuthService,
     private storageService: StorageService,
     private snackBar: SnackbarService,
+    private route: Router,
   ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
@@ -36,6 +38,8 @@ export class LoginComponent {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.role = this.storageService.getUser().role;
+        this.snackBar.showSuccess('Connexion réussie');
+        this.route.navigate(['']);
       },
       error: (err) => {
         this.snackBar.showError((this.errorMessage = err.error.message));

@@ -8,7 +8,10 @@
           <img width="124" src="assets/logo/logo-black.png" alt="Logo" />
         </a>
 
-        <div class="hidden lg:flex flex-1 justify-center space-x-10">
+        <!-- Navigation principale -->
+        <div
+          class="hidden lg:flex flex-1 justify-center items-center space-x-10"
+        >
           <ul class="flex space-x-6">
             <li><a routerLink="" class="text-base transition">Accueil</a></li>
             <li class="relative group cursor-pointer">
@@ -57,13 +60,41 @@
           </ul>
         </div>
 
-        <div class="hidden lg:flex">
-          <a
-            routerLink="register"
-            class="text-base transition px-4 py-2 bg-mainColor text-white rounded-lg hover:bg-mainColorBtnHover"
-          >
-            S'inscrire
-          </a>
+        <div class="hidden lg:flex items-center space-x-4">
+          @if (!isLogged) {
+            <a
+              routerLink="register"
+              class="text-base transition px-4 py-2 bg-mainColor text-white rounded-lg hover:bg-mainColorBtnHover"
+            >
+              S'inscrire
+            </a>
+            <a
+              routerLink="login"
+              class="text-base transition px-4 py-2 hover:text-mainColorBtnHover"
+            >
+              Se connecter
+            </a>
+          } @else {
+            <button
+              mat-button
+              [matMenuTriggerFor]="menu"
+              class="flex items-center gap-2 px-4 py-2 text-gray-900 font-medium bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition"
+            >
+              <i class="mr-6 fa-solid fa-circle-user text-gray-600 text-lg"></i>
+
+              <span class="truncate">{{ username | uppercase }}</span>
+            </button>
+
+            <mat-menu #menu="matMenu">
+              <button
+                (click)="logout()"
+                mat-menu-item
+                class="text-red-500 hover:bg-red-100"
+              >
+                <i class="mr-2 fa-solid fa-right-from-bracket"></i> Déconnexion
+              </button>
+            </mat-menu>
+          }
         </div>
 
         <button
@@ -133,6 +164,46 @@
 
       <div class="mt-6">
         <div class="space-y-4">
+          @if (!isLogged) {
+            <div class="lg:flex">
+              <a
+                routerLink="register"
+                class="text-base transition px-4 py-2 hover:text-mainColorBtnHover"
+              >
+                S'inscrire
+              </a>
+              <a
+                routerLink="login"
+                class="text-base transition px-4 py-2 hover:text-mainColorBtnHover"
+              >
+                Se connecter
+              </a>
+            </div>
+          } @else {
+            <div class="user-container flex justify-center">
+              <button
+                mat-button
+                [matMenuTriggerFor]="menu"
+                class="flex items-center gap-2 px-4 py-2 text-gray-900 font-medium bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition"
+              >
+                <i
+                  class="mr-5 fa-solid fa-circle-user text-gray-600 text-lg"
+                ></i>
+
+                <span class="">{{ username | uppercase }}</span>
+              </button>
+            </div>
+
+            <mat-menu #menu="matMenu">
+              <button
+                (click)="logout()"
+                mat-menu-item
+                class="text-red-500 hover:bg-red-100"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i> Déconnexion
+              </button>
+            </mat-menu>
+          }
           <details class="group">
             <summary
               class="cursor-pointer text-base font-medium text-black transition duration-200 hover:text-mainColorBtnHover"
@@ -186,7 +257,6 @@
             class="block py-2 text-base font-medium text-black transition duration-200 hover:text-mainColorBtnHover"
             >Programmes</a
           >
-          <a routerLink="register" class="text-base transition">S'inscrire</a>
         </div>
       </div>
     </div>
